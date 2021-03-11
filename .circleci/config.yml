@@ -33,7 +33,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # build!
-      - run: npm run package chrome prod
+      - run: npm run build
 
       - run:
           name: install AWS CLI
@@ -46,4 +46,4 @@ jobs:
           command: aws configure set default.s3.signature_version s3v4
       - run:
           name: deploy to s3
-          command:  aws s3 sync packages s3://birthdaymanager --region ca-central-1
+          command:  aws s3 sync public s3://drivetestprodrivingschool.com --region ca-central-1
