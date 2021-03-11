@@ -242,7 +242,7 @@ const MainLogo = () => {
       <Link
         className={'pos-full'}
         to={'/'}
-        title={'Midway Driving School Homepage'}>
+        title={'Drive Test Pro Driving School Homepage'}>
         <StaticQuery
           query={graphql`
             query {
@@ -259,7 +259,7 @@ const MainLogo = () => {
             <Img
               className={'pos-full'}
               fluid={data.file.childImageSharp.fluid}
-              alt={'Midway Driving School'}
+              alt={'Drive Test Pro Driving School'}
             />
           )}
         />
@@ -311,7 +311,7 @@ export default ({}) => {
   return (
     <>
       <COVIDBanner>
-        <span
+        {/*<span
           style={{
             textAlign: 'center',
             flex: '0 0 160px',
@@ -322,10 +322,9 @@ export default ({}) => {
             fontWeight: 'bold'
           }}>
           COVID-19 Update
-        </span>
+        </span>*/}
         <span style={{ textAlign: 'left' }}>
-          We are unable to book lessons at this time. We are sorry for any
-          inconvenience. Please check back after April 1st.
+          The no. 1 driving school in Ajax.
         </span>
       </COVIDBanner>
       {/* Mobile */}
@@ -333,7 +332,7 @@ export default ({}) => {
       {/* Web */}
       <Container as={'header'} className={'mobile-none'} id={navId}>
         <div className={'pos-full'} style={{ position: 'relative' }}>
-          <MainLogo />
+          {/*<MainLogo />*/}
           <MobileNav />
           <Nav className={'mobile-none pos-center-vert'}>
             <WebNav />

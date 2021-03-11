@@ -26,7 +26,7 @@ const Layout = ({ children, homepage }) => {
           <Global homepage={homepage} />
           <Header />
           {children}
-          <RecentPosts />
+   {/*       <RecentPosts />*/}
           <Footer />
         </div>
       </ThemeProvider>

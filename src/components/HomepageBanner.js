@@ -102,7 +102,7 @@ export default () => {
         query={graphql`
           query {
             img: file(
-              relativePath: { eq: "midway-driving-school-bg-driver.jpg" }
+              relativePath: { eq: "steering-wheel.jpg" }
             ) {
               childImageSharp {
                 fluid(maxWidth: 3000) {
@@ -127,11 +127,6 @@ export default () => {
       <Section style={{ position: 'relative', height: '100%' }}>
         <H2>Training designed for nervous&nbsp;adults</H2>
         <Down href="#services" title="Services" />
-        <Discount>
-          <h3>Special Discount!</h3>
-          <p>{`Mention the ${month} web discount when you call for $25 off a 6 or 7½ hour package!`}</p>
-          <p>{`Valid through the month of ${month} only.`}</p>
-        </Discount>
       </Section>
     </Container>
   )

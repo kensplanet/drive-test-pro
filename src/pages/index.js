@@ -19,10 +19,10 @@ const Home = ({
 }) => {
   return (
     <Layout homepage>
-      <SEO title={title} keywords={keywords} />
+      {/*<SEO title={title} keywords={keywords} />*/}
       <HomepageBanner />
       <Services />
-      <ExperienceCallout />
+     {/* <ExperienceCallout />*/}
       <Locations />
       <Faq />
     </Layout>
@@ -33,7 +33,7 @@ export default Home
 
 export const pageQuery = graphql`
   query {
-    site {
+    site {        
       siteMetadata {
         title
         keywords

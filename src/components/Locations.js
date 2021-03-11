@@ -57,7 +57,7 @@ export default () => {
         Free pickup is available for most of the Twin City, Duluth and Rochester
         metro areas. If you have passed the Minnesota Instruction Permit
         (Knowledge Test) and you want to schedule an appointment,{' '}
-        <LinkTele href={'tel:612-623-4142'}>call us at (612) 623-4142</LinkTele>
+        <LinkTele href={'tel:XXX-XXX-XXXX'}>call us at (XXX) XXX-XXXX</LinkTele>
         . It takes just a minute to arrange a convenient time for your first
         driving lesson.
       </SectionP>

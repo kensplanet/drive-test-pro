@@ -47,6 +47,3 @@ jobs:
       - run:
           name: deploy to s3
           command:  aws s3 sync public s3://drivetestprodrivingschool.com --region ca-central-1
-      - run:
-          name: invalidate cloudfront
-          command: aws cloudfront create-invalidation --distribution-id ERB4DSA1I4I27--paths "/*" --region ca-central-1
