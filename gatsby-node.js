@@ -1,4 +1,4 @@
-cd dri  const get = require('lodash/get')
+const get = require('lodash/get')
 const uniq = require('lodash/uniq')
 const kebabCase = require('lodash/kebabCase')
 
