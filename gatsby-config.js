@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Midway Driving School – ESL/Nervous Adult and Home School Behind the Wheel Driving Lessons Serving the Twin Cities (Saint Paul, Minneapolis), Duluth and Rochester`,
-    author: `Midway Driving School`,
-    description: `Midway Driving School - Driver education, tips, locations, rates, and hours`,
-    siteUrl: `https://midwaydrivingschools.com`,
+    title: `Drive Test Pro Driving School – Driving Lessons Serving the Greater Toronto Area`,
+    author: `Drive Test Pro Driving School`,
+    description: `Drive Test Pro Driving School - Driver education, tips, locations, rates, and hours`,
+    siteUrl: `http://drivetestprodrivingschool.com`,
     keywords: [
       'behind-the-wheel',
       'adult drivers',
@@ -80,9 +80,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Midway Driving School`,
+        name: `Drive Test Pro Driving School`,
         short_name: `MDS`,
-        start_url: `https://midwaydrivingschools.com`,
+        start_url: `http://drivetestprodrivingschool.com`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `standalone`,
