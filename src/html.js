@@ -26,16 +26,6 @@ export default function HTML(props) {
         {props.postBodyComponents}
         <script
           type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-            var sc_project=7143347;
-            var sc_invisible=1;
-            var sc_security="75c7ef9c";
-            `
-          }}
-        />
-        <script
-          type="text/javascript"
           src="https://www.statcounter.com/counter/counter.js"
           async
         />

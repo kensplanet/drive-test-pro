@@ -4,6 +4,7 @@ import {SectionText} from './Section'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import { BtnPrimary } from './Buttons'
 import Articles from './Articles'
+import {Button} from "@material-ui/core";
 
 const Bg = styled.div`
   background-color: ${props => props.theme.bodyBgAlt};
@@ -41,7 +42,9 @@ const RecentPosts = () => {
           <Link
             to={'/articles'}
             title={'Midway Driving School Articles'}>
-            <BtnPrimary as="span">See all articles</BtnPrimary>
+            <Button variant="contained" color="primary">
+              View all articles
+            </Button>
           </Link>
         </LinkContainer>
       </Header>
