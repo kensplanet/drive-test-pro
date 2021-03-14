@@ -14,9 +14,7 @@ const SectionWithText = styled.section`
       ? `calc(${props.theme.pad} * 6) ${props.theme.pad}`
       : `calc(${props.theme.pad} * 4) ${props.theme.pad}`};
   margin: 0 auto;
-  &.smaller {
-    max-width: 880px;
-  }
+
   @media only screen and (max-width: 800px) {
     padding: ${props =>
       props.anchor

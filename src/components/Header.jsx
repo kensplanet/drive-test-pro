@@ -137,7 +137,7 @@ const Header = ({ siteTitle }) => {
             Drive Test PRO
           </Typography>
             <StyledTabs value={value} onChange={handleChange}>
-              <StyledTab label="Services" />
+              <StyledTab label="About Us" />
               <StyledTab label="Testimonials" />
               <StyledTab label="Contact Us" />
             </StyledTabs>
