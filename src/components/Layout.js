@@ -1,6 +1,6 @@
 import React from 'react'
 import Global from './Global'
-import Header from './Header'
+import Header from './Header/BaseHeader'
 import Footer from './Footer'
 import RecentPosts from './RecentPosts'
 import { ThemeProvider } from 'styled-components'
