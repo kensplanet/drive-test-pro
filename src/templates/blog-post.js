@@ -70,15 +70,15 @@ const BlogPostTemplate = ({
   }
 }) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} style={{marginTop: '56px'}}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Heading
         fluid={file.childImageSharp.fluid}
         title={post.frontmatter.title}
         sub={post.frontmatter.date}
       />
-      <Container>
-        <SectionText>
+      <Container style={{marginTop: '56px'}}>
+        <SectionText style={{marginTop: '56px'}}>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           {/*<p>
             <strong>Be safe, be confident and happy driving!</strong>
@@ -88,7 +88,7 @@ const BlogPostTemplate = ({
             <em>“Training designed for nervous adults”</em>
           </p>*/}
           {/*<p style={{ fontSize: '.9rem' }}>Photo by CHEN Dairui on Unsplash</p>*/}
-          <div style={{ display: 'block', overflow: 'auto' }}>
+          <div style={{ display: 'block', overflow: 'auto', marginTop: '100px' }}>
             {previous && (
               <Link
                 style={{ float: 'left' }}

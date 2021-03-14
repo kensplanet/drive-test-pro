@@ -4,7 +4,9 @@ import styled from 'styled-components'
 export const Section = styled.section`
   max-width: 1200px;
   padding: ${props => props.theme.pad};
+   margin-bottom: 56px;
   margin: 0 auto;
+
 `
 
 const SectionWithText = styled.section`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
+import {TimelineItem as MuiTimelineItem} from '@material-ui/lab';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
@@ -17,8 +17,8 @@ import MoodIcon from '@material-ui/icons/Mood';
 import {faCarSide, faGraduationCap, faHandshake, faUserTie} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import Logo from "./Logo";
-import {SectionP} from "./Section";
+import withDimensions from '../components/Dimensions';
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -29,11 +29,19 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CustomizedTimeline() {
+const CustomizedTimeline = ({isMobile}) => {
     const classes = useStyles();
 
+    const TimelineItem = isMobile() ? withStyles({
+        missingOppositeContent: {
+            "&:before": {
+                display: "none"
+            }
+        }
+    })(MuiTimelineItem) : MuiTimelineItem;
+
     return (
-        <Timeline align="alternate">
+        <Timeline align={!isMobile() ? "alternate" : "left"}>
             <TimelineItem>
                 <TimelineSeparator>
                     <TimelineDot color="primary">
@@ -115,4 +123,6 @@ export default function CustomizedTimeline() {
             </TimelineItem>
         </Timeline>
     );
-}
+};
+
+export default withDimensions(CustomizedTimeline);

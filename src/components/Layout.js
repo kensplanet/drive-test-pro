@@ -1,13 +1,13 @@
 import React from 'react'
 import Global from './Global'
-import Header from './Header'
+import Header from './Header/BaseHeader'
 import Footer from './Footer'
 import RecentPosts from './RecentPosts'
 import { ThemeProvider } from 'styled-components'
 
 const Layout = ({ children, homepage }) => {
   return (
-    <div style={{backgroundColor: '#f5f7f9'}}>
+    <div style={{backgroundColor: '#F5F5F5'}}>
       <ThemeProvider
         theme={{
           bodyBg: '#fff',
@@ -33,6 +33,6 @@ const Layout = ({ children, homepage }) => {
       </ThemeProvider>
     </div>
   )
-}
+};
 
 export default Layout

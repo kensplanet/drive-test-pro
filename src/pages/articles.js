@@ -21,7 +21,7 @@ class Blog extends React.Component {
       <Layout>
         <SEO title={title} keywords={keywords} />
         <Bg>
-          <SectionText heading={'Articles'}>
+          <SectionText heading={'Articles'} style={{marginTop: '56px'}}>
             <Articles data={this.props.data} />
           </SectionText>
         </Bg>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {useState} from 'react'
 import clsx from 'clsx'
 import { makeStyles, withStyles, useTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -7,15 +7,12 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
-import LocalTaxiIcon from '@material-ui/icons/LocalTaxi';
 import { Button } from '@material-ui/core';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Logo from './Logo';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faCarSide } from '@fortawesome/free-solid-svg-icons'
-import Car from "./Car";
+import {Link} from "gatsby";
+import Icon from '../Icon';
 
 const drawerWidth = 240;
 
@@ -76,7 +73,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
   },
 }));
-
 const Header = ({ siteTitle }) => {
   const classes = useStyles();
 
@@ -99,7 +95,6 @@ const Header = ({ siteTitle }) => {
       },
     },
   }))((props) => <Tab disableRipple {...props} />);
-
   const StyledTabs = withStyles({
     indicator: {
       display: 'flex',
@@ -112,7 +107,6 @@ const Header = ({ siteTitle }) => {
       },
     },
   })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -124,17 +118,13 @@ const Header = ({ siteTitle }) => {
         })}
       >
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="Open drawer"
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-          </IconButton>
           <IconButton edge="start" color="inherit" aria-label="menu">
-            <FontAwesomeIcon icon={faCarSide} />
+            <Link to="/" rel="next">
+              <Icon/>
+            </Link>
           </IconButton>
-          <Typography variant="h6" color="inherit" style={{flex: 1}}>
+
+          <Typography variant="h6" color="inherit" style={{flex: 1, paddingLeft: '10px'}}>
             Drive Test PRO
           </Typography>
             <StyledTabs value={value} onChange={handleChange}>
