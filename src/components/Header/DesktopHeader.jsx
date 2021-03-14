@@ -119,7 +119,9 @@ const Header = ({ siteTitle }) => {
       >
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
+            <Link to="/">
               <Icon/>
+            </Link>
           </IconButton>
 
           <Typography variant="h6" color="inherit" style={{flex: 1, paddingLeft: '10px'}}>
