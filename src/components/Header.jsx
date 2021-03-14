@@ -15,6 +15,7 @@ import Tab from '@material-ui/core/Tab';
 import Logo from './Logo';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faCarSide } from '@fortawesome/free-solid-svg-icons'
+import Car from "./Car";
 
 const drawerWidth = 240;
 

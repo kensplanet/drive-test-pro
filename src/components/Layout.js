@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 
 const Layout = ({ children, homepage }) => {
   return (
-    <div>
+    <div style={{backgroundColor: '#f5f7f9'}}>
       <ThemeProvider
         theme={{
           bodyBg: '#fff',

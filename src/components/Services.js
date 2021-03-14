@@ -36,19 +36,7 @@ export default () => {
       id={'services'}
       heading={'About Us'}
       className={'smaller'}>
-        <Grid container direction="row">
-            <Grid item xs={6}>
-                <SectionP>
-                    <div style={{ width: '100%%', marginBottom: `1.45rem` }}>
-                        <Logo />
-                    </div>
-                </SectionP>
-
-            </Grid>
-            <Grid item xs={6}>
-                <CustomizedTimeline/>>
-            </Grid>
-        </Grid>
+        <CustomizedTimeline/>
 
       <div style={{ display: 'block', clear: 'both' }} />
     </SectionText>

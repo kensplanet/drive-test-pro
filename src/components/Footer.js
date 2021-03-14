@@ -86,9 +86,9 @@ const Tagline = styled.h3`
 `
 
 export default () => {
-  return (
-    <StaticQuery
-      query={graphql`
+    return (
+        <StaticQuery
+            query={graphql`
         query {
           mdps: file(
             relativePath: {
@@ -112,155 +112,165 @@ export default () => {
           }
         }
       `}
-      render={data => {
-        return (
-          <Container>
-         {/*   <Pad />*/}
-            <Section>
-              {/*<FlexToBlock style={{ alignItems: 'flex-end' }}>
-                <Col1>
-                  <Logo
-                    fluid={data.mds.childImageSharp.fluid}
-                    alt={'Midway Driving School'}
-                  />
-                  <a
-                    href={'https://dps.mn.gov/Pages/default.aspx'}
-                    rel={'noopener noreferrer'}
-                    target={'_blank'}>
-                    <Logo
-                      fluid={data.mdps.childImageSharp.fluid}
-                      alt={'Minnesota Department of Transportation'}
-                    />
-                  </a>
-                </Col1>
-                <Col2 />
-                <Col3>
-                  <Tagline>
-                    Serving the Saint&nbsp;Paul&nbsp;and&nbsp;Minneapolis,
-                    <br />
-                    MN metro area for over&nbsp;40&nbsp;years.
-                  </Tagline>
-                </Col3>
-              </FlexToBlock>
-              <Pad />
-              <FlexToBlock>
-                <Col1>
-                  <p>
-                    This program is licensed by the{' '}
-                    <a
-                      className={'accent'}
-                      href={'https://dps.mn.gov/Pages/default.aspx'}
-                      rel={'noopener noreferrer'}
-                      target={'_blank'}>
-                      Minnesota Department of Public Safety.
-                    </a>
-                  </p>
-                  <p>
-                    We are listed on{' '}
-                    <a
-                      className={'accent'}
-                      href={'http://www.drivinglessonsschool.com/'}
-                      rel={'noopener noreferrer'}
-                      target={'_blank'}>
-                      Recommended Driving Schools
-                    </a>
-                  </p>
-                  <h2>Midway Links</h2>
-                  <ul>
-                    <li>
-                      <Link to="/#services">Services</Link>
-                    </li>
-                    <li>
-                      <Link to="/#locations">Locations</Link>
-                    </li>
-                    <li>
-                      <Link to="/#faq">Frequently Asked Questions (FAQ)</Link>
-                    </li>
-                  </ul>
-                </Col1>
-                <Col2 />
-                <Col3>
-                  <h2>Contact</h2>
-                  <FlexToBlock as={'ul'}>
-                    <SubColumns as={'li'}>
-                      Greater Toronto Area
-                      <br />
-                      <a href="tel:647-739-1046">(647) 739-1046</a>
-                    </SubColumns>
-                  </FlexToBlock>
-                  <Pad />
-                  <FlexToBlock>
-                    <SubColumns>
-                      <h2>Helpful Links</h2>
-                      <ul>
-                        <li>
-                          <a
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            href={
-                              'https://dps.mn.gov/divisions/dvs/Pages/default.aspx'
-                            }>
-                            Driver and Vehicle Services - MN
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            href={
-                              'https://dps.mn.gov/divisions/dvs/Pages/drivers-license-information.aspx'
-                            }>
-                            Driver's License Information - MN
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            href={
-                              'https://dps.mn.gov/divisions/dvs/locations/Pages/find-office-locations.aspx'
-                            }>
-                            Driver's License Locations - MN
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            href={
-                              'https://dps.mn.gov/divisions/dvs/forms-documents/Documents/Minnesota_Drivers_Manual.pdf'
-                            }>
-                            Driver's Manual - MN (PDF)
-                          </a>
-                        </li>
-                      </ul>
-                    </SubColumns>
-                    <SubColumns>
-                      <h2>Follow Us</h2>
-                      <ul>
-                        <li>
-                          <a
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            href={
-                              'https://www.facebook.com/MidwayDrivingSchool/'
-                            }>
-                            Facebook
-                          </a>
-                        </li>
-                      </ul>
-                    </SubColumns>
-                  </FlexToBlock>
-                </Col3>
-              </FlexToBlock>*/}
-              <Copyright>
-                Copyright ©{new Date().getFullYear()} Drive Test Pro Driving School All
-                Rights Reserved.
-              </Copyright>
-            </Section>
-          </Container>
-        )
-      }}
-    />
-  )
+            render={data => {
+                return (
+                    <Container>
+                        <Pad />
+                        <Section>
+                            <FlexToBlock style={{ alignItems: 'flex-end' }}>
+                                <Col1>
+                                    <Logo
+                                        fluid={data.mds.childImageSharp.fluid}
+                                        alt={'Midway Driving School'}
+                                    />
+                                    <a
+                                        href={'https://dps.mn.gov/Pages/default.aspx'}
+                                        rel={'noopener noreferrer'}
+                                        target={'_blank'}>
+                                        <Logo
+                                            fluid={data.mdps.childImageSharp.fluid}
+                                            alt={'Minnesota Department of Transportation'}
+                                        />
+                                    </a>
+                                </Col1>
+                                <Col2 />
+                                <Col3>
+                                    <Tagline>
+                                        Serving the Saint&nbsp;Paul&nbsp;and&nbsp;Minneapolis,
+                                        <br />
+                                        MN metro area for over&nbsp;40&nbsp;years.
+                                    </Tagline>
+                                </Col3>
+                            </FlexToBlock>
+                            <Pad />
+                            <FlexToBlock>
+                                <Col1>
+                                    <p>
+                                        This program is licensed by the{' '}
+                                        <a
+                                            className={'accent'}
+                                            href={'https://dps.mn.gov/Pages/default.aspx'}
+                                            rel={'noopener noreferrer'}
+                                            target={'_blank'}>
+                                            Minnesota Department of Public Safety.
+                                        </a>
+                                    </p>
+                                    <p>
+                                        We are listed on{' '}
+                                        <a
+                                            className={'accent'}
+                                            href={'http://www.drivinglessonsschool.com/'}
+                                            rel={'noopener noreferrer'}
+                                            target={'_blank'}>
+                                            Recommended Driving Schools
+                                        </a>
+                                    </p>
+                                    <h2>Midway Links</h2>
+                                    <ul>
+                                        <li>
+                                            <Link to="/#services">Services</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/#locations">Locations</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/#faq">Frequently Asked Questions (FAQ)</Link>
+                                        </li>
+                                    </ul>
+                                </Col1>
+                                <Col2 />
+                                <Col3>
+                                    <h2>Contact</h2>
+                                    <FlexToBlock as={'ul'}>
+                                        <SubColumns as={'li'}>
+                                            Twin Cities
+                                            <br />
+                                            <a href="tel:612-623-4142">(612) 623-4142</a>
+                                        </SubColumns>
+                                        <SubColumns as={'li'}>
+                                            Duluth
+                                            <br />
+                                            <a href="tel:218-626-0123">(218) 626-0123</a>
+                                        </SubColumns>
+                                        <SubColumns as={'li'}>
+                                            Rochester
+                                            <br />
+                                            <a href="tel:507-289-3456">(507) 289-3456</a>
+                                        </SubColumns>
+                                    </FlexToBlock>
+                                    <Pad />
+                                    <FlexToBlock>
+                                        <SubColumns>
+                                            <h2>Helpful Links</h2>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        target={'_blank'}
+                                                        rel={'noopener noreferrer'}
+                                                        href={
+                                                            'https://dps.mn.gov/divisions/dvs/Pages/default.aspx'
+                                                        }>
+                                                        Driver and Vehicle Services - MN
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        target={'_blank'}
+                                                        rel={'noopener noreferrer'}
+                                                        href={
+                                                            'https://dps.mn.gov/divisions/dvs/Pages/drivers-license-information.aspx'
+                                                        }>
+                                                        Driver's License Information - MN
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        target={'_blank'}
+                                                        rel={'noopener noreferrer'}
+                                                        href={
+                                                            'https://dps.mn.gov/divisions/dvs/locations/Pages/find-office-locations.aspx'
+                                                        }>
+                                                        Driver's License Locations - MN
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        target={'_blank'}
+                                                        rel={'noopener noreferrer'}
+                                                        href={
+                                                            'https://dps.mn.gov/divisions/dvs/forms-documents/Documents/Minnesota_Drivers_Manual.pdf'
+                                                        }>
+                                                        Driver's Manual - MN (PDF)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </SubColumns>
+                                        <SubColumns>
+                                            <h2>Follow Us</h2>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        target={'_blank'}
+                                                        rel={'noopener noreferrer'}
+                                                        href={
+                                                            'https://www.facebook.com/MidwayDrivingSchool/'
+                                                        }>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </SubColumns>
+                                    </FlexToBlock>
+                                </Col3>
+                            </FlexToBlock>
+                            <Copyright>
+                                Copyright ©{new Date().getFullYear()} Midway Driving School All
+                                Rights Reserved.
+                            </Copyright>
+                        </Section>
+                    </Container>
+                )
+            }}
+        />
+    )
 }

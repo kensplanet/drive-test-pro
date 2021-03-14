@@ -9,6 +9,7 @@ import Faq from '../components/Faq'
 import HomepageBanner from '../components/HomepageBanner'
 import SEO from '../components/seo'
 import ExperienceCallout from '../components/ExperienceCallout'
+import Car from "../components/Car";
 
 const Home = ({
   data: {
@@ -18,8 +19,9 @@ const Home = ({
   }
 }) => {
   return (
-    <Layout homepage>
+    <Layout homepage style={{backgroundColor: '#f5f7f9'}}>
       {/*<SEO title={title} keywords={keywords} />*/}
+      <Car />
     {/*  <HomepageBanner />*/}
       <Services />
      {/* <ExperienceCallout />*/}
