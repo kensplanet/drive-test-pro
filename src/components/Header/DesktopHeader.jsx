@@ -120,7 +120,7 @@ const Header = ({ siteTitle }) => {
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <Link to="/">
-              <Icon/>
+              <img width={"96px"} src={"/icon.png"}/>
             </Link>
           </IconButton>
 
