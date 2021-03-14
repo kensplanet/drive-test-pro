@@ -36,7 +36,7 @@ export default function CustomizedTimeline() {
         <Timeline align="alternate">
             <TimelineItem>
                 <TimelineSeparator>
-                    <TimelineDot>
+                    <TimelineDot color="primary">
                         <MoodIcon />
                     </TimelineDot>
                     <TimelineConnector />
@@ -68,10 +68,10 @@ export default function CustomizedTimeline() {
             </TimelineItem>
             <TimelineItem>
                 <TimelineSeparator>
-                    <TimelineDot color="primary" variant="outlined">
+                    <TimelineDot color="primary">
                         <FontAwesomeIcon icon={faGraduationCap} />
                     </TimelineDot>
-                    <TimelineConnector className={classes.secondaryTail} />
+                    <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
                     <Paper elevation={3} className={classes.paper}>
@@ -84,7 +84,7 @@ export default function CustomizedTimeline() {
             </TimelineItem>
             <TimelineItem>
                 <TimelineSeparator>
-                    <TimelineDot color="secondary">
+                    <TimelineDot color="primary">
                         <AttachMoneyIcon />
                     </TimelineDot>
                     <TimelineConnector />
@@ -100,7 +100,7 @@ export default function CustomizedTimeline() {
             </TimelineItem>
             <TimelineItem>
                 <TimelineSeparator>
-                    <TimelineDot color="secondary">
+                    <TimelineDot color="primary">
                         <FontAwesomeIcon icon={faHandshake} />
                     </TimelineDot>
                 </TimelineSeparator>

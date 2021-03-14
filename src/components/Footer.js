@@ -3,6 +3,12 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import { Section } from './Section'
 import Img from 'gatsby-image'
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const Container = styled.footer`
   background-color: ${props => props.theme.footerBg};
@@ -119,7 +125,7 @@ export default () => {
                         <Section>
                             <FlexToBlock style={{ alignItems: 'flex-end' }}>
                                 <Col1>
-                                    <Logo
+                                   {/* <Logo
                                         fluid={data.mds.childImageSharp.fluid}
                                         alt={'Midway Driving School'}
                                     />
@@ -131,21 +137,21 @@ export default () => {
                                             fluid={data.mdps.childImageSharp.fluid}
                                             alt={'Minnesota Department of Transportation'}
                                         />
-                                    </a>
+                                    </a>*/}
                                 </Col1>
                                 <Col2 />
                                 <Col3>
-                                    <Tagline>
+                                   {/* <Tagline>
                                         Serving the Saint&nbsp;Paul&nbsp;and&nbsp;Minneapolis,
                                         <br />
                                         MN metro area for over&nbsp;40&nbsp;years.
-                                    </Tagline>
+                                    </Tagline>*/}
                                 </Col3>
                             </FlexToBlock>
                             <Pad />
                             <FlexToBlock>
                                 <Col1>
-                                    <p>
+                                    {/*<p>
                                         This program is licensed by the{' '}
                                         <a
                                             className={'accent'}
@@ -164,8 +170,8 @@ export default () => {
                                             target={'_blank'}>
                                             Recommended Driving Schools
                                         </a>
-                                    </p>
-                                    <h2>Midway Links</h2>
+                                    </p>*/}
+                                    <h2>Navigation Links</h2>
                                     <ul>
                                         <li>
                                             <Link to="/#services">Services</Link>
@@ -183,11 +189,11 @@ export default () => {
                                     <h2>Contact</h2>
                                     <FlexToBlock as={'ul'}>
                                         <SubColumns as={'li'}>
-                                            Twin Cities
+                                            Greater Toronto Area
                                             <br />
-                                            <a href="tel:612-623-4142">(612) 623-4142</a>
+                                            <a href="tel:647-739-1046">(647) 739-1046</a>
                                         </SubColumns>
-                                        <SubColumns as={'li'}>
+                                        {/*<SubColumns as={'li'}>
                                             Duluth
                                             <br />
                                             <a href="tel:218-626-0123">(218) 626-0123</a>
@@ -196,7 +202,7 @@ export default () => {
                                             Rochester
                                             <br />
                                             <a href="tel:507-289-3456">(507) 289-3456</a>
-                                        </SubColumns>
+                                        </SubColumns>*/}
                                     </FlexToBlock>
                                     <Pad />
                                     <FlexToBlock>
@@ -208,9 +214,9 @@ export default () => {
                                                         target={'_blank'}
                                                         rel={'noopener noreferrer'}
                                                         href={
-                                                            'https://dps.mn.gov/divisions/dvs/Pages/default.aspx'
+                                                            'https://www.ontario.ca/document/official-mto-drivers-handbook'
                                                         }>
-                                                        Driver and Vehicle Services - MN
+                                                        Driver's Handbook - Ontario
                                                     </a>
                                                 </li>
                                                 <li>
@@ -218,9 +224,9 @@ export default () => {
                                                         target={'_blank'}
                                                         rel={'noopener noreferrer'}
                                                         href={
-                                                            'https://dps.mn.gov/divisions/dvs/Pages/drivers-license-information.aspx'
+                                                            'https://drivetest.ca/book-a-road-test/'
                                                         }>
-                                                        Driver's License Information - MN
+                                                        Book a Road Test - Ontario
                                                     </a>
                                                 </li>
                                                 <li>
@@ -228,35 +234,75 @@ export default () => {
                                                         target={'_blank'}
                                                         rel={'noopener noreferrer'}
                                                         href={
-                                                            'https://dps.mn.gov/divisions/dvs/locations/Pages/find-office-locations.aspx'
+                                                            'https://www.ontario.ca/page/exchange-out-province-drivers-licence'
                                                         }>
-                                                        Driver's License Locations - MN
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        target={'_blank'}
-                                                        rel={'noopener noreferrer'}
-                                                        href={
-                                                            'https://dps.mn.gov/divisions/dvs/forms-documents/Documents/Minnesota_Drivers_Manual.pdf'
-                                                        }>
-                                                        Driver's Manual - MN (PDF)
+                                                        Driver's License Information for non-Ontario drivers
                                                     </a>
                                                 </li>
                                             </ul>
                                         </SubColumns>
                                         <SubColumns>
                                             <h2>Follow Us</h2>
-                                            <ul>
-                                                <li>
+                                            <ul style={{'display': 'flex'}}>
+                                                <li style={{'display': 'inline', paddingRight: '5px'}}>
                                                     <a
                                                         target={'_blank'}
                                                         rel={'noopener noreferrer'}
                                                         href={
-                                                            'https://www.facebook.com/MidwayDrivingSchool/'
+                                                            'https://www.facebook.com//'
                                                         }>
-                                                        Facebook
+                                                        <FacebookIcon/>
                                                     </a>
+                                                    <li style={{'display': 'inline'}}>
+                                                        <a
+                                                            target={'_blank'}
+                                                            rel={'noopener noreferrer'}
+                                                            href={
+                                                                'https://www.instagram.com//'
+                                                            }>
+                                                            <InstagramIcon/>
+                                                        </a>
+                                                    </li>
+                                                    <li style={{'display': 'inline'}}>
+                                                        <a
+                                                            target={'_blank'}
+                                                            rel={'noopener noreferrer'}
+                                                            href={
+                                                                'https://www.twitter.com//'
+                                                            }>
+                                                            <TwitterIcon/>
+                                                        </a>
+                                                    </li>
+                                                    <li style={{'display': 'inline'}}>
+                                                        <a
+                                                            target={'_blank'}
+                                                            rel={'noopener noreferrer'}
+                                                            href={
+                                                                'https://www.youtube.com//'
+                                                            }>
+                                                            <YouTubeIcon/>
+                                                        </a>
+                                                    </li>
+                                                    <li style={{'display': 'inline'}}>
+                                                        <a
+                                                            target={'_blank'}
+                                                            rel={'noopener noreferrer'}
+                                                            href={
+                                                                'https://www.linkedin.com//'
+                                                            }>
+                                                            <LinkedInIcon/>
+                                                        </a>
+                                                    </li>
+                                                    <li style={{'display': 'inline'}}>
+                                                        <a
+                                                            target={'_blank'}
+                                                            rel={'noopener noreferrer'}
+                                                            href={
+                                                                'https://www.whatsapp.com//'
+                                                            }>
+                                                            <WhatsAppIcon/>
+                                                        </a>
+                                                    </li>
                                                 </li>
                                             </ul>
                                         </SubColumns>
@@ -264,7 +310,7 @@ export default () => {
                                 </Col3>
                             </FlexToBlock>
                             <Copyright>
-                                Copyright ©{new Date().getFullYear()} Midway Driving School All
+                                Copyright ©{new Date().getFullYear()} Drive Test Pro Driving School All
                                 Rights Reserved.
                             </Copyright>
                         </Section>
