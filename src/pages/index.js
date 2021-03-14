@@ -20,10 +20,10 @@ const Home = ({
   return (
     <Layout homepage>
       {/*<SEO title={title} keywords={keywords} />*/}
-      <HomepageBanner />
+    {/*  <HomepageBanner />*/}
       <Services />
      {/* <ExperienceCallout />*/}
-      <Locations />
+     {/* <Locations />*/}
       <Faq />
     </Layout>
   )
