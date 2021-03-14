@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionText } from './Section'
+import {SectionText} from './Section'
 import styled from 'styled-components'
 import FaqItem from './FaqItem'
 
@@ -16,14 +16,14 @@ const Dl = styled.dl`
 `
 
 const faqs = [
-  {
-    question:
-      'What do I need before I can start having driving lessons with Drive Test Pro?',
-    answer:
-      'You must have a G1 or G2. You can register on line or over the phone or come\n' +
-        '\n' +
-        'to the office saturday or sunday from 9am to 2:15pm.'
-  },
+    {
+        question:
+            'What do I need before I can start having driving lessons with Drive Test Pro?',
+        answer:
+            'You must have a G1 or G2. You can register on line or over the phone or come\n' +
+            '\n' +
+            'to the office saturday or sunday from 9am to 2:15pm.'
+    },
     {
         question:
             'How much discount will I get on my insurance with the certificate?',
@@ -51,13 +51,13 @@ const faqs = [
 ];
 
 export default () => {
-  return (
-    <SectionText anchor heading={'FAQ'} id={'faq'} className={'smaller'}>
-      <Dl>
-        {faqs.map((props, i) => {
-          return <FaqItem {...props} key={i} />
-        })}
-      </Dl>
-    </SectionText>
-  )
+    return (
+        <SectionText anchor heading={'Frequenly asked questions'} id={'faq'} className={'smaller'}>
+            <Dl>
+                {faqs.map((props, i) => {
+                    return <FaqItem {...props} key={i}/>
+                })}
+            </Dl>
+        </SectionText>
+    )
 }

@@ -14,7 +14,7 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import MoodIcon from '@material-ui/icons/Mood';
-import {faCarSide, faGraduationCap, faUserTie} from "@fortawesome/free-solid-svg-icons";
+import {faCarSide, faGraduationCap, faHandshake, faUserTie} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Logo from "./Logo";
@@ -87,6 +87,7 @@ export default function CustomizedTimeline() {
                     <TimelineDot color="secondary">
                         <AttachMoneyIcon />
                     </TimelineDot>
+                    <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
                     <Paper elevation={3} className={classes.paper}>
@@ -94,6 +95,21 @@ export default function CustomizedTimeline() {
                             Lower prices
                         </Typography>
                         <Typography>We have significant discount packages.</Typography>
+                    </Paper>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineDot color="secondary">
+                        <FontAwesomeIcon icon={faHandshake} />
+                    </TimelineDot>
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Paper elevation={3} className={classes.paper}>
+                        <Typography variant="h6" component="h1">
+                            Good contacts
+                        </Typography>
+                        <Typography>We maintain excellent contacts with various driving test locations.</Typography>
                     </Paper>
                 </TimelineContent>
             </TimelineItem>
