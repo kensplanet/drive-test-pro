@@ -1,27 +1,20 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import 'babel-polyfill'
 
 import Layout from '../components/Layout'
 import Services from '../components/Services'
-import Locations from '../components/Locations'
 import Faq from '../components/Faq'
-import HomepageBanner from '../components/HomepageBanner'
-import SEO from '../components/seo'
-import ExperienceCallout from '../components/ExperienceCallout'
 import Car from "../components/Car";
+import withDimensions from '../components/Dimensions';
+import Logo from "../components/Logo";
 
-const Home = ({
-  data: {
-    site: {
-      siteMetadata: { title, keywords }
-    }
-  }
-}) => {
+const Home = ({isMobile}) => {
   return (
     <Layout homepage style={{backgroundColor: '#f5f7f9'}}>
       {/*<SEO title={title} keywords={keywords} />*/}
-      <Car />
+        {!isMobile() ? <Car /> : <div style={{ marginTop: '56px'}}>
+            <Logo />
+        </div>}
     {/*  <HomepageBanner />*/}
       <Services />
      {/* <ExperienceCallout />*/}
@@ -31,15 +24,4 @@ const Home = ({
   )
 }
 
-export default Home
-
-export const pageQuery = graphql`
-  query {
-    site {        
-      siteMetadata {
-        title
-        keywords
-      }
-    }
-  }
-`
+export default withDimensions(Home)
