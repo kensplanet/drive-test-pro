@@ -24,6 +24,7 @@ import HomeIcon from '@material-ui/icons/Home'
 import ListIcon from '@material-ui/icons/ViewList'
 import {Button} from "@material-ui/core";
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import Icon from "../Icon";
 
 const drawerWidth = 240;
 
@@ -118,12 +119,16 @@ const Header = ({ siteTitle }) => {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <Link to={"/"}>
+                        <Icon/>
+                    </Link>
+
                     <Typography variant="h6" color="inherit" style={{flex: 1}}>
                         {siteTitle}
                     </Typography>
-                    <Button variant="contained" color="primary">
+                    {!open && <Button variant="contained" color="primary">
                         <PhoneIphoneIcon/>
-                    </Button>
+                    </Button>}
                 </Toolbar>
             </AppBar>
             <Drawer
