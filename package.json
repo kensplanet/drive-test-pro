@@ -35,7 +35,15 @@
     "react-mailto.js": "^2.2.1",
     "react-reveal": "^1.2.2",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "@material-ui/core": "^4.0.1",
+    "@material-ui/icons": "^4.2.0",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@material-ui/styles": "^4.0.1",
+    "gatsby-plugin-material-ui": "^2.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4"
   },
   "devDependencies": {
     "eslint": "^7.14.0",

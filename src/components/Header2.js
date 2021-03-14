@@ -154,7 +154,7 @@ const PhoneNumber = () => {
           display: 'inline-block'
         }}
       />
-      <span>Call (612) 623-4142</span>
+      <span>Call (647) 739-1046</span>
     </a>
   )
 }
@@ -274,7 +274,7 @@ const COVIDBanner = styled.div`
   padding: 10px;
   line-height: 1.15;
 
-  background: ${(props) => props.theme.accentDarker};
+  background: ${(props) => props.theme.black};
   color: #fff;
   font-size: 15px;
   position: relative;
@@ -310,8 +310,8 @@ export default ({}) => {
   }, [isSticky, setIsSticky])
   return (
     <>
-      <COVIDBanner>
-        {/*<span
+     {/* <COVIDBanner>
+        <span
           style={{
             textAlign: 'center',
             flex: '0 0 160px',
@@ -322,11 +322,11 @@ export default ({}) => {
             fontWeight: 'bold'
           }}>
           COVID-19 Update
-        </span>*/}
+        </span>
         <span style={{ textAlign: 'left' }}>
           The no. 1 driving school in Ajax.
         </span>
-      </COVIDBanner>
+      </COVIDBanner>*/}
       {/* Mobile */}
       <MobileNav />
       {/* Web */}

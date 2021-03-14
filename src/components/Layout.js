@@ -13,20 +13,21 @@ const Layout = ({ children, homepage }) => {
           bodyBg: '#fff',
           bodyBgAlt: '#F5F5F5',
           linkAlt: '#302D2F',
-          accent: '#6DC1FF',
+          accent: '#3f51b5',
           accentDark: '#006bb7',
           accentDarker: '#005693',
           textDefault: '#555',
           textHeader: '#302D2F',
           pad: '20px',
           footerBg: '#302D2F',
-          footerColor: '#fff'
+          footerColor: '#fff',
+            black: '#000'
         }}>
         <div>
           <Global homepage={homepage} />
           <Header />
           {children}
-   {/*       <RecentPosts />*/}
+   {      <RecentPosts />}
           <Footer />
         </div>
       </ThemeProvider>

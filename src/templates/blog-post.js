@@ -80,14 +80,14 @@ const BlogPostTemplate = ({
       <Container>
         <SectionText>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <p>
+          {/*<p>
             <strong>Be safe, be confident and happy driving!</strong>
             <br />
             -Midway Driving School
             <br />
             <em>“Training designed for nervous adults”</em>
-          </p>
-          <p style={{ fontSize: '.9rem' }}>Photo by CHEN Dairui on Unsplash</p>
+          </p>*/}
+          {/*<p style={{ fontSize: '.9rem' }}>Photo by CHEN Dairui on Unsplash</p>*/}
           <div style={{ display: 'block', overflow: 'auto' }}>
             {previous && (
               <Link

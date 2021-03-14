@@ -115,9 +115,9 @@ export default () => {
       render={data => {
         return (
           <Container>
-            <Pad />
+         {/*   <Pad />*/}
             <Section>
-              <FlexToBlock style={{ alignItems: 'flex-end' }}>
+              {/*<FlexToBlock style={{ alignItems: 'flex-end' }}>
                 <Col1>
                   <Logo
                     fluid={data.mds.childImageSharp.fluid}
@@ -183,19 +183,9 @@ export default () => {
                   <h2>Contact</h2>
                   <FlexToBlock as={'ul'}>
                     <SubColumns as={'li'}>
-                      Twin Cities
+                      Greater Toronto Area
                       <br />
-                      <a href="tel:612-623-4142">(612) 623-4142</a>
-                    </SubColumns>
-                    <SubColumns as={'li'}>
-                      Duluth
-                      <br />
-                      <a href="tel:218-626-0123">(218) 626-0123</a>
-                    </SubColumns>
-                    <SubColumns as={'li'}>
-                      Rochester
-                      <br />
-                      <a href="tel:507-289-3456">(507) 289-3456</a>
+                      <a href="tel:647-739-1046">(647) 739-1046</a>
                     </SubColumns>
                   </FlexToBlock>
                   <Pad />
@@ -262,9 +252,9 @@ export default () => {
                     </SubColumns>
                   </FlexToBlock>
                 </Col3>
-              </FlexToBlock>
+              </FlexToBlock>*/}
               <Copyright>
-                Copyright ©{new Date().getFullYear()} Midway Driving School All
+                Copyright ©{new Date().getFullYear()} Drive Test Pro Driving School All
                 Rights Reserved.
               </Copyright>
             </Section>

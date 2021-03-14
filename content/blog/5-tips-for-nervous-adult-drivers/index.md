@@ -26,5 +26,3 @@ If you need to drive a little slower, no problem! Make sure you're in the far ri
 ## 5. Practice Driving with a Trusted Friend
 
 Especially for beginning drivers, make sure to only invite a trusted responsible friend into the vehicle. This person can catch mistakes, help navigate and make you feel at ease.
-
-Midway Driving School strives to make you feel comfortable while driving. <a title="Midway Driving School Locations and Hours" href="/locations-and-rates">You can even schedule an appointment to focus on areas you personally want to work on to be confident on the road</a>. Make and appointment today with MDS!

@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import { SectionText, SectionP } from './Section'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import Logo from "./Logo";
 
 const ServiceList = styled.ul`
   margin-top: 100px;
@@ -38,12 +39,8 @@ const ServiceItem = styled.li`
 `
 
 const list = [
-  'Training Designed for Nervous Adults',
   'Private Lessons',
-  'Free Pickup Service',
-  'Single Lessons or Discount Packages',
-  'Cars Available for MN License Road Test',
-  'ESL Experts'
+  'Single Lessons or Discount Packages'
 ]
 
 export default () => {
@@ -54,70 +51,26 @@ export default () => {
       heading={'Services'}
       className={'smaller'}>
       <SectionP>
-        Midway Driving School has been the leader in Adult Behind the Wheel
-        driver education for over 40 years.
-      </SectionP>
-      <SectionP>
-        Offering private lessons with free pickup service, our patient
-        instructors have provided Behind the Wheel driver education and arranged
-        Driver License Road tests for thousands of students from all over the
-        world.
+          <div style={{ width: '50%', marginBottom: `1.45rem` }}>
+              <Logo />
+          </div>
+        We provide the best private driving lessons in the city of Ajax.
       </SectionP>
       <ServiceList>
         <StaticQuery
           // TODO: query in more elegant fashion
           query={graphql`
             query {
-              img0: file(
-                relativePath: {
-                  eq: "icon-training-designed-for-nervous-adults.png"
-                }
-              ) {
+            
+              img0: file(relativePath: { eq: "icon-private-lessons.png" }) {
                 childImageSharp {
                   fluid(maxHeight: 80) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
-              img1: file(relativePath: { eq: "icon-private-lessons.png" }) {
-                childImageSharp {
-                  fluid(maxHeight: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              img2: file(
-                relativePath: { eq: "icon-free-pick-up-service.png" }
-              ) {
-                childImageSharp {
-                  fluid(maxHeight: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              img3: file(
-                relativePath: {
-                  eq: "icon-single-lessons-or-discount-packages.png"
-                }
-              ) {
-                childImageSharp {
-                  fluid(maxHeight: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              img4: file(
-                relativePath: {
-                  eq: "icon-cars-available-for-mn-license-road-test.png"
-                }
-              ) {
-                childImageSharp {
-                  fluid(maxHeight: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              img5: file(relativePath: { eq: "icon-esl-experts.png" }) {
+            
+              img1: file(relativePath: {eq: "icon-single-lessons-or-discount-packages.png"}) { 
                 childImageSharp {
                   fluid(maxHeight: 80) {
                     ...GatsbyImageSharpFluid

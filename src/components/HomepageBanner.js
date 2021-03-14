@@ -125,7 +125,7 @@ export default () => {
         )}
       />
       <Section style={{ position: 'relative', height: '100%' }}>
-        <H2>Training designed for nervous&nbsp;adults</H2>
+        {/*<H2>Training designed for nervous&nbsp;adults</H2>*/}
         <Down href="#services" title="Services" />
       </Section>
     </Container>

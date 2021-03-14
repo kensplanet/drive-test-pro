@@ -53,7 +53,7 @@ export default () => {
       anchor
       heading={'Locations'}
       className={'smaller'}>
-      <SectionP>
+   {/*   <SectionP>
         Free pickup is available for most of the Twin City, Duluth and Rochester
         metro areas. If you have passed the Minnesota Instruction Permit
         (Knowledge Test) and you want to schedule an appointment,{' '}
@@ -65,8 +65,8 @@ export default () => {
         Our experienced instructors have each trained hundreds of nervous
         adults. They are very helpful, and will quickly prepare you for your
         Minnesota License Road Test in our driving school training car.
-      </SectionP>
-      <Header as={'h3'}>Click on your city for rates and hours</Header>
+      </SectionP>*/}
+     {/* <Header as={'h3'}>Click on your city for rates and hours</Header>*/}
       <Columns>
         <ul>
           {places.map(({ name }, i) => {
