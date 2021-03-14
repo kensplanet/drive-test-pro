@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 
 const Layout = ({ children, homepage }) => {
   return (
-    <div style={{backgroundColor: '#f5f7f9'}}>
+    <div style={{backgroundColor: '#F5F5F5'}}>
       <ThemeProvider
         theme={{
           bodyBg: '#fff',
@@ -33,6 +33,6 @@ const Layout = ({ children, homepage }) => {
       </ThemeProvider>
     </div>
   )
-}
+};
 
 export default Layout

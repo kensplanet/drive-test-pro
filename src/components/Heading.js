@@ -25,6 +25,7 @@ const Container = styled(BackgroundImage)`
   background-position: 50% 85%;
   color: #fff;
   background-color: #141a18;
+  margin-top: 56px;
   @media only screen and (max-width: 800px) {
     min-height: 10vw;
   }

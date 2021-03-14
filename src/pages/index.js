@@ -10,7 +10,7 @@ import Logo from "../components/Logo";
 
 const Home = ({isMobile}) => {
   return (
-    <Layout homepage style={{backgroundColor: '#f5f7f9'}}>
+    <Layout homepage style={{backgroundColor: '#F5F5F5'}}>
       {/*<SEO title={title} keywords={keywords} />*/}
         {!isMobile() ? <Car /> : <div style={{ marginTop: '56px'}}>
             <Logo />
@@ -22,6 +22,6 @@ const Home = ({isMobile}) => {
       <Faq />
     </Layout>
   )
-}
+};
 
 export default withDimensions(Home)
