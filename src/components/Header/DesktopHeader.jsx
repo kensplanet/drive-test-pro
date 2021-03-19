@@ -22,6 +22,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import {SectionText} from "../Section";
 import CancelIcon from '@material-ui/icons/Cancel';
+import Snackbar from "@material-ui/core/Snackbar/Snackbar";
+import CloseIcon from '@material-ui/icons/Close';
+
 
 const drawerWidth = 240;
 
@@ -90,15 +93,24 @@ const Header = ({siteTitle}) => {
 
     const [value, setValue] = React.useState(0);
     const [open, setOpen] = React.useState(false);
+    const [openSnackBar, setOpenSnackBar] = React.useState(false);
 
-    const handleClickOpen = () => {
-        setOpen(true);
+    const handleClick = () => {
+        setOpenSnackBar(true);
+    };
+
+    const handleCloseSnackBar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpenSnackBar(false);
     };
 
     const handleClose = () => {
         setOpen(false);
+        setOpenSnackBar(true);
     };
-
 
     const handleChange = (event, newValue) => {
         if (newValue === 1) {
@@ -156,7 +168,7 @@ const Header = ({siteTitle}) => {
 
                 </DialogTitle>
                 <DialogContent>
-                    <ContactUs/>
+                    <ContactUs handleClose={handleClose}/>
                 </DialogContent>
             </Dialog>
             <AppBar
@@ -184,6 +196,23 @@ const Header = ({siteTitle}) => {
                     </Button>
                 </Toolbar>
             </AppBar>
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                }}
+                open={openSnackBar}
+                autoHideDuration={6000}
+                onClose={handleCloseSnackBar}
+                message="Message received"
+                action={
+                    <React.Fragment>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackBar}>
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                }
+            />
         </div>
     )
 };

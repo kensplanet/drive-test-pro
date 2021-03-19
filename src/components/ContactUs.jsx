@@ -24,25 +24,29 @@ import Toolbar from '@material-ui/core/Toolbar'
 import {SectionText} from './Section'
 import CancelIcon from '@material-ui/icons/Cancel';
 import Box from '@material-ui/core/Box';
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from "@material-ui/core/IconButton";
 
-const onSubmit = async values => {
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    await sleep(300);
-    window.alert(JSON.stringify(values, 0, 2));
-};
-const validate = values => {
-    const errors = {};
-    if (!values.name) {
-        errors.name = 'Required';
-    }
 
-    if (!values.phone) {
-        errors.phone = 'Required';
-    }
-    return errors;
-};
+function App({handleClose, handle}) {
+    const onSubmit = async values => {
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+        await sleep(300);
+        handleClose();
+    };
+    const validate = values => {
+        const errors = {};
+        if (!values.name) {
+            errors.name = 'Required';
+        }
 
-function App() {
+        if (!values.phone) {
+            errors.phone = 'Required';
+        }
+        return errors;
+    };
+
     return (
         <div style={{padding: 16, margin: 'auto', maxWidth: 1200}}>
 
