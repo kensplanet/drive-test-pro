@@ -11,15 +11,8 @@ module.exports = {
       'education',
       'esl',
       'behind the wheel',
-      'minnesota',
-      'twin cities',
       'nervous',
       'english as second language',
-      'minneapolis',
-      'saint paul',
-      'st. paul',
-      'midway driving school',
-      'midway driving',
       'driving school',
       'anxious',
       'anxious drivers',
@@ -92,15 +85,16 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Drive Test Pro Driving School`,
-        short_name: `MDS`,
+        short_name: `Drive Test Pro`,
         start_url: `http://drivetestprodrivingschool.com`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `standalone`,
-        icon: `src/assets/mds-icon.png`
+        icon: `src/assets/logo.jpeg`
       }
     },
     `gatsby-plugin-remove-serviceworker`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    'gatsby-theme-testimonials'
   ]
-}
+};

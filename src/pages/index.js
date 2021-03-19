@@ -7,6 +7,7 @@ import Faq from '../components/Faq'
 import Car from "../components/Car";
 import withDimensions from '../components/Dimensions';
 import Logo from "../components/Logo";
+import Testimonial from "../components/Testimonial";
 
 const Home = ({isMobile}) => {
   return (
@@ -19,6 +20,7 @@ const Home = ({isMobile}) => {
       <Services />
      {/* <ExperienceCallout />*/}
      {/* <Locations />*/}
+        <Testimonial/>
       <Faq />
     </Layout>
   )
