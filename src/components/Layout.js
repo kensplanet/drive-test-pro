@@ -5,6 +5,7 @@ import Footer from './Footer'
 import RecentPosts from './RecentPosts'
 import { ThemeProvider } from 'styled-components'
 import ContactUs from "./ContactUs";
+import Dock from "./Dock/Dock";
 
 const Layout = ({ children, homepage }) => {
   return (
@@ -29,6 +30,7 @@ const Layout = ({ children, homepage }) => {
           <Header />
           {children}
    {      <RecentPosts />}
+            <Dock/>
           <Footer />
         </div>
       </ThemeProvider>

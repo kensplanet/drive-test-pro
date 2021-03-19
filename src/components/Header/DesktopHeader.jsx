@@ -109,7 +109,6 @@ const Header = ({siteTitle}) => {
 
     const handleClose = () => {
         setOpen(false);
-        setOpenSnackBar(true);
     };
 
     const handleChange = (event, newValue) => {
@@ -168,7 +167,7 @@ const Header = ({siteTitle}) => {
 
                 </DialogTitle>
                 <DialogContent>
-                    <ContactUs handleClose={handleClose}/>
+                    <ContactUs handleClose={handleClose} handleClick={handleClick}/>
                 </DialogContent>
             </Dialog>
             <AppBar
@@ -199,7 +198,7 @@ const Header = ({siteTitle}) => {
             <Snackbar
                 anchorOrigin={{
                     vertical: 'bottom',
-                    horizontal: 'right',
+                    horizontal: 'left',
                 }}
                 open={openSnackBar}
                 autoHideDuration={6000}

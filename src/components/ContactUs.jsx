@@ -29,11 +29,12 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from "@material-ui/core/IconButton";
 
 
-function App({handleClose, handle}) {
+function App({handleClose, handleClick}) {
     const onSubmit = async values => {
         const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
         await sleep(300);
         handleClose();
+        handleClick();
     };
     const validate = values => {
         const errors = {};
