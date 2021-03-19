@@ -7,7 +7,7 @@ export default () => {
     <SectionText
       anchor
       id={'services'}
-      heading={'About Us'}
+      heading={'Why Us'}
       className={'smaller'}>
         <CustomizedTimeline/>
 
