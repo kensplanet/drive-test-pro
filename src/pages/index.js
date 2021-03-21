@@ -1,31 +1,25 @@
 import React from 'react'
-import 'babel-polyfill'
-
 import Layout from '../components/Layout'
-import Services from '../components/Services'
+import WhyUs from '../components/WhyUs'
 import Faq from '../components/Faq'
 import Car from "../components/Car";
 import withDimensions from '../components/Dimensions';
 import Logo from "../components/Logo";
-import Testimonial from "../components/Testimonial";
-import Location from "../components/Location";
+import Testimonials from "../components/Testimonials";
+import Services from "../components/Services";
 
 const Home = ({isMobile}) => {
-  return (
-    <Layout homepage style={{backgroundColor: '#F5F5F5'}}>
-      {/*<SEO title={title} keywords={keywords} />*/}
-        {!isMobile() ? <Car /> : <div style={{ marginTop: '56px'}}>
-            <Logo />
-        </div>}
-    {/*  <HomepageBanner />*/}
-      <Services />
-     {/* <ExperienceCallout />*/}
-     {/* <Locations />*/}
-        <Testimonial/>
-        <Location/>
-      <Faq />
-    </Layout>
-  )
+    return (
+        <Layout homepage style={{backgroundColor: '#F5F5F5'}}>
+            {!isMobile() ? <Car/> : <div style={{marginTop: '56px'}}>
+                <Logo/>
+            </div>}
+            <WhyUs/>
+            <Testimonials/>
+            <Services/>
+            <Faq/>
+        </Layout>
+    )
 };
 
 export default withDimensions(Home)

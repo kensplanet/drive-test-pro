@@ -1,17 +1,14 @@
 import React from 'react'
 import CustomizedTimeline from "./Features";
-import { SectionText, SectionP } from './Section'
+import { SectionText} from './Section'
 
 export default () => {
   return (
     <SectionText
       anchor
-      id={'services'}
       heading={'Why Us'}
       className={'smaller'}>
         <CustomizedTimeline/>
-
-      <div style={{ display: 'block', clear: 'both' }} />
     </SectionText>
   )
 }

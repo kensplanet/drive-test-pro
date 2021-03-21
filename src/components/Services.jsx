@@ -144,11 +144,13 @@ const rates = {
       price: '$275.00'
     }
   ]
-}
+};
 
 export default ({ type = 'main' }) => {
   return (
-    <SectionText>
+    <SectionText  anchor id={'services'}
+                  heading={'Services'}
+                  className={'smaller'}>
       <Container>
         <div>
           <Col>
