@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
-import React, {useState} from 'react'
-import clsx from 'clsx'
+import React from 'react'
 import {makeStyles, withStyles, useTheme} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
@@ -12,20 +11,16 @@ import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {Link} from "gatsby";
-import Icon from '../Icon';
-import Modal from '@material-ui/core/Modal';
 import ContactUs from '../ContactUs';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import {SectionText} from "../Section";
 import CancelIcon from '@material-ui/icons/Cancel';
 import Snackbar from "@material-ui/core/Snackbar/Snackbar";
 import CloseIcon from '@material-ui/icons/Close';
 import axios from "axios";
-
 
 const drawerWidth = 240;
 
@@ -95,6 +90,7 @@ const Header = ({siteTitle}) => {
     const [value, setValue] = React.useState(0);
     const [open, setOpen] = React.useState(false);
     const [openSnackBar, setOpenSnackBar] = React.useState(false);
+    const [message, setMessage] = React.useState(false);
 
     const handleClick = () => {
         setOpenSnackBar(true);
@@ -108,18 +104,18 @@ const Header = ({siteTitle}) => {
         setOpenSnackBar(false);
     };
 
-    const handleClose = (values) => {
-        if (values) {
-            values.message = values.message.trim();
-            console.log(values.message);
-            axios.post('https://vookfl8vg0.execute-api.ca-central-1.amazonaws.com/prod', values).then(function (response) {
-               handleClick();
-            });
-
-        } else {
+    const handleSubmit = (values) => {
+        let val = { ...values };
+        val.message = val.message.replace(/(\r\n|\n|\r)/gm," ");
+        axios.post('https://vookfl8vg0.execute-api.ca-central-1.amazonaws.com/prod', val).then(function () {
             setOpen(false);
-            handleClick();
-        }
+            setMessage('Message received');
+            setOpenSnackBar(true);
+        }).catch(() => {
+            setOpen(false);
+            setMessage('An error occurred. Please try again.');
+            setOpenSnackBar(true);
+        });
     };
 
     const handleChange = (event, newValue) => {
@@ -161,7 +157,7 @@ const Header = ({siteTitle}) => {
                 open={open}
                 TransitionComponent={Transition}
                 keepMounted
-                onClose={handleClose}
+                onClose={() => {setOpen(false);}}
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description"
             >
@@ -174,11 +170,11 @@ const Header = ({siteTitle}) => {
                         heading={'Contact Us'}
                         className={'smaller'}>
                     </SectionText>
-                    <CancelIcon fontSize={"large"} style={{cursor: 'pointer'}} onClick={handleClose}/>
+                    <CancelIcon fontSize={"large"} style={{cursor: 'pointer'}} onClick={() => {setOpen(false);}}/>
 
                 </DialogTitle>
                 <DialogContent>
-                    <ContactUs handleClose={handleClose} handleClick={handleClick}/>
+                    <ContactUs handleSubmit={handleSubmit}/>
                 </DialogContent>
             </Dialog>
             <AppBar
@@ -215,7 +211,7 @@ const Header = ({siteTitle}) => {
                 open={openSnackBar}
                 autoHideDuration={6000}
                 onClose={handleCloseSnackBar}
-                message="Message received"
+                message={message}
                 action={
                     <React.Fragment>
                         <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackBar}>

@@ -2,28 +2,15 @@ import React from 'react';
 import {Form, Field} from 'react-final-form';
 import {TextField} from 'mui-rff';
 import {
-    Typography,
-    Paper,
-    Link,
     Grid,
     Button,
-    CssBaseline,
-    RadioGroup,
-    FormLabel,
-    MenuItem,
-    FormGroup,
-    FormControl,
-    FormControlLabel,
+    CssBaseline
 } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-/*import {MDBBtn, MDBIcon} from "mdbreact";
-import 'mdbreact/dist/css/mdb.css'*/
 
-function App({handleClose, handleClick}) {
+function App({handleSubmit}) {
     const onSubmit = async values => {
-        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-        await sleep(300);
-        handleClose(values);
+        handleSubmit(values);
     };
     const validate = values => {
         const errors = {};
@@ -42,9 +29,9 @@ function App({handleClose, handleClick}) {
 
             <Form
                 onSubmit={onSubmit}
-                initialValues={{message: 'Hi there,\n\nI am interested in knowing more about your driving services. Please give me a callback on the number provided.\n\nThank you'}}
+                initialValues={{message: 'Hi there, I am interested in knowing more about your driving services. Please give me a callback on the number provided. Thank you'}}
                 validate={validate}
-                render={({handleSubmit, reset, submitting, pristine, values}) => (
+                render={({handleSubmit, submitting}) => (
                     <form onSubmit={handleSubmit} noValidate>
                         <div>
                             <CssBaseline/>
@@ -100,7 +87,6 @@ function App({handleClose, handleClick}) {
                                 </Grid>
                             </Grid>
                         </div>
-                      {/*  <pre>{JSON.stringify(values, 0, 2)}</pre>*/}
                     </form>
                 )}
             />
