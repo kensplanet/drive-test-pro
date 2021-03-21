@@ -126,8 +126,8 @@ const rates = {
     }
   ],
   outter: [
-    { elem: '2 Hour Lessons', price: '$185.00' },
-    { elem: '6 Hour Behind the Wheel Package', price: '$540.00' },
+    { elem: '2 Hour Lessons', price: '$75' },
+    { elem: '6 Hour Behind the Wheel Package', price: '200.00' },
     { elem: '7½ Hour Package including Road Test', price: '$605.00' },
     {
       elem: (
@@ -144,13 +144,14 @@ const rates = {
       price: '$275.00'
     }
   ]
-}
+};
 
 export default ({ type = 'main' }) => {
   return (
-    <SectionText>
-      <Container>
-        <div>
+    <SectionText anchor id={'services'}
+                  heading={'Services'}
+                  className={'smaller'}>
+        <Container>
           <Col>
             <h2>Rates</h2>
             <table className="price">
@@ -183,7 +184,7 @@ export default ({ type = 'main' }) => {
             </table>
             <h3>Office hours</h3>
             <h5>
-              <a href="tel:612-623-4142">Call (612) 623-4142</a>
+              <a href="tel:647-739-1046">Call (647) 739-1046</a>
             </h5>
             <table className="hours">
               <tbody>
@@ -202,8 +203,7 @@ export default ({ type = 'main' }) => {
               </tbody>
             </table>
           </Col2>
-        </div>
-      </Container>
+        </Container>
     </SectionText>
   )
 }

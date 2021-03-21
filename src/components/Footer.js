@@ -3,12 +3,6 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import { Section } from './Section'
 import Img from 'gatsby-image'
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const Container = styled.footer`
   background-color: ${props => props.theme.footerBg};
@@ -118,69 +112,31 @@ export default () => {
           }
         }
       `}
-            render={data => {
+            render={() => {
                 return (
                     <Container>
                         <Pad />
                         <Section>
                             <FlexToBlock style={{ alignItems: 'flex-end' }}>
                                 <Col1>
-                                   {/* <Logo
-                                        fluid={data.mds.childImageSharp.fluid}
-                                        alt={'Midway Driving School'}
-                                    />
-                                    <a
-                                        href={'https://dps.mn.gov/Pages/default.aspx'}
-                                        rel={'noopener noreferrer'}
-                                        target={'_blank'}>
-                                        <Logo
-                                            fluid={data.mdps.childImageSharp.fluid}
-                                            alt={'Minnesota Department of Transportation'}
-                                        />
-                                    </a>*/}
                                 </Col1>
                                 <Col2 />
                                 <Col3>
-                                   {/* <Tagline>
-                                        Serving the Saint&nbsp;Paul&nbsp;and&nbsp;Minneapolis,
-                                        <br />
-                                        MN metro area for over&nbsp;40&nbsp;years.
-                                    </Tagline>*/}
                                 </Col3>
                             </FlexToBlock>
                             <Pad />
                             <FlexToBlock>
                                 <Col1>
-                                    {/*<p>
-                                        This program is licensed by the{' '}
-                                        <a
-                                            className={'accent'}
-                                            href={'https://dps.mn.gov/Pages/default.aspx'}
-                                            rel={'noopener noreferrer'}
-                                            target={'_blank'}>
-                                            Minnesota Department of Public Safety.
-                                        </a>
-                                    </p>
-                                    <p>
-                                        We are listed on{' '}
-                                        <a
-                                            className={'accent'}
-                                            href={'http://www.drivinglessonsschool.com/'}
-                                            rel={'noopener noreferrer'}
-                                            target={'_blank'}>
-                                            Recommended Driving Schools
-                                        </a>
-                                    </p>*/}
                                     <h2>Navigation Links</h2>
                                     <ul>
                                         <li>
                                             <Link to="/#services">Services</Link>
                                         </li>
                                         <li>
-                                            <Link to="/#locations">Locations</Link>
+                                            <Link to="/#testimonials">Testimonials</Link>
                                         </li>
                                         <li>
-                                            <Link to="/#faq">Frequently Asked Questions (FAQ)</Link>
+                                            <Link to="/#faq">Frequently Asked Questions</Link>
                                         </li>
                                     </ul>
                                 </Col1>
@@ -193,16 +149,6 @@ export default () => {
                                             <br />
                                             <a href="tel:647-739-1046">(647) 739-1046</a>
                                         </SubColumns>
-                                        {/*<SubColumns as={'li'}>
-                                            Duluth
-                                            <br />
-                                            <a href="tel:218-626-0123">(218) 626-0123</a>
-                                        </SubColumns>
-                                        <SubColumns as={'li'}>
-                                            Rochester
-                                            <br />
-                                            <a href="tel:507-289-3456">(507) 289-3456</a>
-                                        </SubColumns>*/}
                                     </FlexToBlock>
                                     <Pad />
                                     <FlexToBlock>
@@ -238,71 +184,6 @@ export default () => {
                                                         }>
                                                         Driver's License Information for non-Ontario drivers
                                                     </a>
-                                                </li>
-                                            </ul>
-                                        </SubColumns>
-                                        <SubColumns>
-                                            <h2>Follow Us</h2>
-                                            <ul style={{'display': 'flex'}}>
-                                                <li style={{'display': 'inline', paddingRight: '5px'}}>
-                                                    <a
-                                                        target={'_blank'}
-                                                        rel={'noopener noreferrer'}
-                                                        href={
-                                                            'https://www.facebook.com//'
-                                                        }>
-                                                        <FacebookIcon/>
-                                                    </a>
-                                                    <li style={{'display': 'inline'}}>
-                                                        <a
-                                                            target={'_blank'}
-                                                            rel={'noopener noreferrer'}
-                                                            href={
-                                                                'https://www.instagram.com//'
-                                                            }>
-                                                            <InstagramIcon/>
-                                                        </a>
-                                                    </li>
-                                                    <li style={{'display': 'inline'}}>
-                                                        <a
-                                                            target={'_blank'}
-                                                            rel={'noopener noreferrer'}
-                                                            href={
-                                                                'https://www.twitter.com//'
-                                                            }>
-                                                            <TwitterIcon/>
-                                                        </a>
-                                                    </li>
-                                                    <li style={{'display': 'inline'}}>
-                                                        <a
-                                                            target={'_blank'}
-                                                            rel={'noopener noreferrer'}
-                                                            href={
-                                                                'https://www.youtube.com//'
-                                                            }>
-                                                            <YouTubeIcon/>
-                                                        </a>
-                                                    </li>
-                                                    <li style={{'display': 'inline'}}>
-                                                        <a
-                                                            target={'_blank'}
-                                                            rel={'noopener noreferrer'}
-                                                            href={
-                                                                'https://www.linkedin.com//'
-                                                            }>
-                                                            <LinkedInIcon/>
-                                                        </a>
-                                                    </li>
-                                                    <li style={{'display': 'inline'}}>
-                                                        <a
-                                                            target={'_blank'}
-                                                            rel={'noopener noreferrer'}
-                                                            href={
-                                                                'https://www.whatsapp.com//'
-                                                            }>
-                                                            <WhatsAppIcon/>
-                                                        </a>
-                                                    </li>
                                                 </li>
                                             </ul>
                                         </SubColumns>

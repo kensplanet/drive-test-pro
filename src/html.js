@@ -24,11 +24,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script
-          type="text/javascript"
-          src="https://www.statcounter.com/counter/counter.js"
-          async
-        />
       </body>
     </html>
   )

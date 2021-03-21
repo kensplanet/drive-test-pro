@@ -120,7 +120,7 @@ const Header = ({ siteTitle }) => {
                         <MenuIcon />
                     </IconButton>
                     <Link to={"/"}>
-                        <Icon/>
+                        <img width={"96px"} src={"/icon.png"}/>
                     </Link>
 
                     <Typography variant="h6" color="inherit" style={{flex: 1}}>

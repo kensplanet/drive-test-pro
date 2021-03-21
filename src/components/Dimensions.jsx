@@ -76,4 +76,4 @@ const withDimensions = (WrappedComponent) => {
 
 };
 
-module.exports = withDimensions;
+export default withDimensions;

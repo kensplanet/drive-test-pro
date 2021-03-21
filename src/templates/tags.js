@@ -36,7 +36,7 @@ class Tags extends React.Component {
           <SectionText heading={'Articles'}>
             <H3>{tagHeader}</H3>
             <Articles data={this.props.data} />
-            <Link to="/tags" title={`Midway Driving School - Tags`}>
+            <Link to="/tags" title={`Drive Test Pro Driving School - Tags`}>
               <BtnPrimary as={'span'}>See all tags</BtnPrimary>
             </Link>
           </SectionText>
