@@ -4,10 +4,7 @@ import Header from './Header/BaseHeader'
 import Footer from './Footer'
 import RecentPosts from './RecentPosts'
 import {ThemeProvider} from 'styled-components'
-import ContactUs from "./ContactUs";
 import Dock from "./Dock/Dock";
-import Testimonials from "./Testimonials";
-import Testimonial from "./Testimonial";
 
 const Layout = ({children, homepage}) => {
     return (

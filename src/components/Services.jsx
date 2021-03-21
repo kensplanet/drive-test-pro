@@ -148,11 +148,10 @@ const rates = {
 
 export default ({ type = 'main' }) => {
   return (
-    <SectionText  anchor id={'services'}
+    <SectionText anchor id={'services'}
                   heading={'Services'}
                   className={'smaller'}>
-      <Container>
-        <div>
+        <Container>
           <Col>
             <h2>Rates</h2>
             <table className="price">
@@ -204,8 +203,7 @@ export default ({ type = 'main' }) => {
               </tbody>
             </table>
           </Col2>
-        </div>
-      </Container>
+        </Container>
     </SectionText>
   )
 }
