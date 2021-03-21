@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {Form, Field} from 'react-final-form';
-import {TextField, Checkbox, Radio, Select} from 'final-form-material-ui';
+import {TextField} from 'mui-rff';
 import {
     Typography,
     Paper,
@@ -19,22 +18,12 @@ import {
 import SendIcon from '@material-ui/icons/Send';
 /*import {MDBBtn, MDBIcon} from "mdbreact";
 import 'mdbreact/dist/css/mdb.css'*/
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import {SectionText} from './Section'
-import CancelIcon from '@material-ui/icons/Cancel';
-import Box from '@material-ui/core/Box';
-import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from "@material-ui/core/IconButton";
-
 
 function App({handleClose, handleClick}) {
     const onSubmit = async values => {
         const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
         await sleep(300);
-        handleClose();
-        handleClick();
+        handleClose(values);
     };
     const validate = values => {
         const errors = {};
@@ -61,40 +50,36 @@ function App({handleClose, handleClick}) {
                             <CssBaseline/>
                             <Grid container alignItems="flex-start" spacing={2}>
                                 <Grid item xs={12}>
-                                    <Field
+                                    <TextField
                                         fullWidth
                                         required
                                         name="name"
-                                        component={TextField}
                                         type="text"
                                         label="Your name"
                                     />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Field
+                                    <TextField
                                         name="phone"
                                         fullWidth
                                         required
-                                        component={TextField}
                                         type="text"
                                         label="Your phone"
                                     />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Field
+                                    <TextField
                                         name="email"
                                         fullWidth
-                                        component={TextField}
                                         type="email"
                                         label="Your email"
                                     />
                                 </Grid>
 
                                 <Grid item xs={12} style={{paddingTop: '30px'}}>
-                                    <Field
+                                    <TextField
                                         fullWidth
                                         name="message"
-                                        component={TextField}
                                         multiline
                                         rows={4}
                                         rowsMax={8}
@@ -102,7 +87,7 @@ function App({handleClose, handleClick}) {
                                     />
                                 </Grid>
 
-                                <Grid justify="space-between" item style={{marginTop: 16}} container justify="flex-end">
+                                <Grid item style={{marginTop: 16}} container justify="flex-end">
                                     <Button
                                         variant="contained"
                                         color="primary"

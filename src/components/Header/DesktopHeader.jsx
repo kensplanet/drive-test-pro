@@ -24,6 +24,7 @@ import {SectionText} from "../Section";
 import CancelIcon from '@material-ui/icons/Cancel';
 import Snackbar from "@material-ui/core/Snackbar/Snackbar";
 import CloseIcon from '@material-ui/icons/Close';
+import axios from "axios";
 
 
 const drawerWidth = 240;
@@ -107,12 +108,22 @@ const Header = ({siteTitle}) => {
         setOpenSnackBar(false);
     };
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleClose = (values) => {
+        if (values) {
+            values.message = values.message.trim();
+            console.log(values.message);
+            axios.post('https://vookfl8vg0.execute-api.ca-central-1.amazonaws.com/prod', values).then(function (response) {
+               handleClick();
+            });
+
+        } else {
+            setOpen(false);
+            handleClick();
+        }
     };
 
     const handleChange = (event, newValue) => {
-        if (newValue === 1) {
+        if (newValue === 2) {
             setOpen(true);
         }
         setValue(newValue);
@@ -186,7 +197,8 @@ const Header = ({siteTitle}) => {
                         Drive Test PRO
                     </Typography>
                     <StyledTabs value={value} onChange={handleChange}>
-                        <StyledTab label="Testimonials"/>
+                        <StyledTab label="Services" component={Link} to={"/#services"}/>
+                        <StyledTab label="Testimonials" component={Link} to={"/#testimonials"}/>
                         <StyledTab label="Contact Us"/>
                     </StyledTabs>
                     <Button variant="contained" color="primary">
