@@ -47,3 +47,11 @@ jobs:
       - run:
           name: deploy to s3
           command:  aws s3 sync public s3://drivetestprodrivingschool.com --region ca-central-1
+      - run:
+          name: invalidate cloudfront
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "main" ]; then
+              aws cloudfront create-invalidation --distribution-id 'E32O39VNC830FK' --paths '/*'
+            else
+
+            fi
