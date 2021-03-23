@@ -1,6 +1,7 @@
 import React from 'react'
 import { SectionText } from './Section'
 import styled from 'styled-components'
+import Packages from "./Packages";
 
 const Col = styled.div`
   width: 58%;
@@ -152,6 +153,7 @@ export default ({ type = 'main' }) => {
                   heading={'Services'}
                   className={'smaller'}>
         <Container>
+          <Packages/>
           <Col>
             <h2>Rates</h2>
             <table className="price">
