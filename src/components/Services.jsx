@@ -1,6 +1,9 @@
 import React from 'react'
 import { SectionText } from './Section'
 import styled from 'styled-components'
+import Packages from "./Packages";
+import Typography from "@material-ui/core/Typography";
+import Rate from "./Rate";
 
 const Col = styled.div`
   width: 58%;
@@ -107,42 +110,9 @@ const Container = styled.div`
 
 const rates = {
   main: [
-    { elem: '2 Hour Lessons', price: '$175.00' },
-    { elem: '6 Hour Behind the Wheel Package', price: '$510.00' },
-    { elem: '7½ Hour Package including Road Test', price: '$575.00' },
-    {
-      elem: (
-        <div>
-          <div style={{ marginBottom: '.5rem' }}>
-            3&#189; Hour Road Test Appointment*
-          </div>
-          <div className="note">
-            <strong>*</strong> Students must take at least one lesson before
-            scheduling a Road Test appointment.
-          </div>
-        </div>
-      ),
-      price: '$265.00'
-    }
-  ],
-  outter: [
-    { elem: '2 Hour Lessons', price: '$75' },
-    { elem: '6 Hour Behind the Wheel Package', price: '200.00' },
-    { elem: '7½ Hour Package including Road Test', price: '$605.00' },
-    {
-      elem: (
-        <div>
-          <div style={{ marginBottom: '.5rem' }}>
-            3&#189; Hour Road Test Appointment*
-          </div>
-          <div className="note">
-            <strong>*</strong> Students must take at least one lesson before
-            scheduling a Road Test appointment.
-          </div>
-        </div>
-      ),
-      price: '$275.00'
-    }
+    { elem: '2 Hour Driving Lessons', price: '$100' },
+    { elem: '6 Hour Driving Lessons', price: '$250' },
+    { elem: 'Any additional hour after 6', price: '$40/hour' }
   ]
 };
 
@@ -152,24 +122,20 @@ export default ({ type = 'main' }) => {
                   heading={'Services'}
                   className={'smaller'}>
         <Container>
+          <Packages/>
           <Col>
-            <h2>Rates</h2>
-            <table className="price">
-              <tbody>
-                {rates[type].map(({ elem, price }, i) => {
-                  return (
-                    <tr key={i}>
-                      <td>{elem}</td>
-                      <td>{price}</td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+            <h2>Driving Lesson Rates</h2>
+            <Typography variant="body1" gutterBottom>
+              We provide blended rates depending on the number of hours you wish to practice with us. The more the no. of hours, the lesser the rates.
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              Please move the slider to get your custom rate.
+            </Typography>
+            <Rate/>
           </Col>
           <Col2>
             <h2>Hours</h2>
-            <h3>Behind the Wheel Lessons</h3>
+            <h3>Driving Lessons</h3>
             <table className="hours">
               <tbody>
                 <tr>

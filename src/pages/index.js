@@ -14,9 +14,9 @@ const Home = ({isMobile}) => {
             {!isMobile() ? <Car/> : <div style={{marginTop: '56px'}}>
                 <Logo/>
             </div>}
-            <WhyUs/>
-            <Testimonials/>
             <Services/>
+            <Testimonials/>
+            <WhyUs/>
             <Faq/>
         </Layout>
     )
