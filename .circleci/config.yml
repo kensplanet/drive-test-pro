@@ -50,6 +50,6 @@ jobs:
       - run:
           name: invalidate cloudfront
           command: |
-            if [ "${CIRCLE_BRANCH}" == "main" ]; then
+            if [ "${CIRCLE_BRANCH}" == "v1.0.0-alpha.5" ]; then
               aws cloudfront create-invalidation --distribution-id 'E32O39VNC830FK' --paths '/*'
             fi
