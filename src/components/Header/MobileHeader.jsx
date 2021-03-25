@@ -126,9 +126,6 @@ const Header = ({ siteTitle }) => {
                     <Typography variant="h6" color="inherit" style={{flex: 1}}>
                         {siteTitle}
                     </Typography>
-                    {!open && <Button variant="contained" color="primary">
-                        <PhoneIphoneIcon/>
-                    </Button>}
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -175,14 +172,14 @@ const Header = ({ siteTitle }) => {
             </Drawer>
         </div>
     )
-}
+};
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
     siteTitle: ``,
-}
+};
 
 export default Header
