@@ -1,8 +1,8 @@
 {
-  "name": "mds",
+  "name": "drive-test-pro",
   "private": true,
-  "description": "Midway Driving School",
-  "version": "0.1.0",
+  "description": "Drive test Pro Driving School",
+  "version": "1.0.0",
   "author": "Shalanah Dawson <shalanahfaith@gmail.com>",
   "dependencies": {
     "@emotion/core": "10.1.1",

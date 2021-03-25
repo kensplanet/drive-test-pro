@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import ClearIcon from '@material-ui/icons/Clear';
 import DoneIcon from '@material-ui/icons/Done';
 import Typography from "@material-ui/core/Typography";
+import withDimensions from "./Dimensions";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -33,33 +34,33 @@ function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
 }
 
-const rows = [
-    createData('Cost', '$300', '$450', '$450'),
-    createData('In class sessions', '20 hours', '10 hours', <ClearIcon/>),
-    createData('In car lessons', <ClearIcon/>, '10 hours', '15 hours'),
-    createData('Pick & Drop Services', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
-    createData('Instructor car for road test', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
-    createData('Test Bookings', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
-];
-
 const useStyles = makeStyles({
     table: {
 
     },
 });
 
-export default function CustomizedTables() {
+const CustomizedTables = ({isMobile}) => {
     const classes = useStyles();
+
+    const rows = [
+        createData('Cost', '$300', '$450', '$450'),
+        createData('In class sessions', !isMobile() ? '20 hours': '20h', !isMobile() ? '10 hours': '10h', <ClearIcon/>),
+        createData('In car lessons', <ClearIcon/>, !isMobile() ? '10 hours' : '10h', !isMobile() ? '15 hours': '15h'),
+        createData('Pick & Drop Services', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Instructor car for road test', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Test Bookings', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
+    ];
 
     return (
         <TableContainer component={Paper} style={{marginBottom: '30px'}}>
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell><Typography variant="h5">Packages</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant="h5">G1</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant="h5">G2</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant="h5">G</Typography></StyledTableCell>
+                        <StyledTableCell><Typography variant={isMobile() ? "h6": "h5"}>Packages</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G1</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G2</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G</Typography></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -78,3 +79,5 @@ export default function CustomizedTables() {
         </TableContainer>
     );
 }
+
+export default withDimensions(CustomizedTables)

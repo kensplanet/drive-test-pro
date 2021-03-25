@@ -107,7 +107,7 @@ const Articles = ({ data, history }) => {
                 <Title>
                   <Link
                     to={slug}
-                    title={`Midway Driving School - Article - ${title}`}>
+                    title={`Drive Test Pro Driving School - Article - ${title}`}>
                     {title}
                   </Link>
                 </Title>
