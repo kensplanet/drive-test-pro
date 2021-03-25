@@ -25,6 +25,7 @@ import ListIcon from '@material-ui/icons/ViewList'
 import {Button} from "@material-ui/core";
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import Icon from "../Icon";
+import Dock from "../Dock/Dock";
 
 const drawerWidth = 240;
 
@@ -89,14 +90,14 @@ const Header = ({ siteTitle }) => {
     const classes = useStyles()
 
     const theme = useTheme()
-    const [open, setOpen] = React.useState(false)
+    const [drawrerOpen, setDrawerOpen] = React.useState(false)
 
     function handleDrawerOpen() {
-        setOpen(true)
+        setDrawerOpen(true)
     }
 
     function handleDrawerClose() {
-        setOpen(false)
+        setDrawerOpen(false)
     }
 
     return (
@@ -126,9 +127,6 @@ const Header = ({ siteTitle }) => {
                     <Typography variant="h6" color="inherit" style={{flex: 1}}>
                         {siteTitle}
                     </Typography>
-                    {!open && <Button variant="contained" color="primary">
-                        <PhoneIphoneIcon/>
-                    </Button>}
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -151,38 +149,34 @@ const Header = ({ siteTitle }) => {
                 </div>
                 <Divider />
                 <List>
-                    <Link to="/">
-                        <ListItem button>
-                            <ListItemText>About Us</ListItemText>
-                        </ListItem>
-                    </Link>
-                    <Link to="/">
+                    <Link to="/#services" onClick={handleDrawerClose}>
                         <ListItem button>
                             <ListItemText>Services</ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to="/">
+                    <Link to="/#testimonials" onClick={handleDrawerClose}>
                         <ListItem button>
                             <ListItemText>Testimonials</ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to="/">
+                    <Link to="/#faq" onClick={handleDrawerClose}>
                         <ListItem button>
-                            <ListItemText>Contact Us</ListItemText>
+                            <ListItemText>FAQs</ListItemText>
                         </ListItem>
                     </Link>
                 </List>
             </Drawer>
+            <Dock/>
         </div>
     )
-}
+};
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
     siteTitle: ``,
-}
+};
 
 export default Header

@@ -41,7 +41,7 @@ const RecentPosts = () => {
         <LinkContainer>
           <Link
             to={'/articles'}
-            title={'Midway Driving School Articles'}>
+            title={'Drive Test Pro Driving School Articles'}>
             <Button variant="contained" color="primary">
               View all articles
             </Button>

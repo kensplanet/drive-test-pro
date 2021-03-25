@@ -1,7 +1,7 @@
 import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import {StaticQuery, graphql, Link} from 'gatsby'
 import styled from 'styled-components'
-import { Section } from './Section'
+import {Section} from './Section'
 import Img from 'gatsby-image'
 
 const Container = styled.footer`
@@ -87,117 +87,88 @@ const Tagline = styled.h3`
 
 export default () => {
     return (
-        <StaticQuery
-            query={graphql`
-        query {
-          mdps: file(
-            relativePath: {
-              eq: "Minnesota_Department_of_Public_Safety_Logo.png"
-            }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          mds: file(
-            relativePath: { eq: "midway-driving-school-logo-footer.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      `}
-            render={() => {
-                return (
-                    <Container>
-                        <Pad />
-                        <Section>
-                            <FlexToBlock style={{ alignItems: 'flex-end' }}>
-                                <Col1>
-                                </Col1>
-                                <Col2 />
-                                <Col3>
-                                </Col3>
-                            </FlexToBlock>
-                            <Pad />
-                            <FlexToBlock>
-                                <Col1>
-                                    <h2>Navigation Links</h2>
-                                    <ul>
-                                        <li>
-                                            <Link to="/#services">Services</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/#testimonials">Testimonials</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/#faq">Frequently Asked Questions</Link>
-                                        </li>
-                                    </ul>
-                                </Col1>
-                                <Col2 />
-                                <Col3>
-                                    <h2>Contact</h2>
-                                    <FlexToBlock as={'ul'}>
-                                        <SubColumns as={'li'}>
-                                            Greater Toronto Area
-                                            <br />
-                                            <a href="tel:647-739-1046">(647) 739-1046</a>
-                                        </SubColumns>
-                                    </FlexToBlock>
-                                    <Pad />
-                                    <FlexToBlock>
-                                        <SubColumns>
-                                            <h2>Helpful Links</h2>
-                                            <ul>
-                                                <li>
-                                                    <a
-                                                        target={'_blank'}
-                                                        rel={'noopener noreferrer'}
-                                                        href={
-                                                            'https://www.ontario.ca/document/official-mto-drivers-handbook'
-                                                        }>
-                                                        Driver's Handbook - Ontario
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        target={'_blank'}
-                                                        rel={'noopener noreferrer'}
-                                                        href={
-                                                            'https://drivetest.ca/book-a-road-test/'
-                                                        }>
-                                                        Book a Road Test - Ontario
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        target={'_blank'}
-                                                        rel={'noopener noreferrer'}
-                                                        href={
-                                                            'https://www.ontario.ca/page/exchange-out-province-drivers-licence'
-                                                        }>
-                                                        Driver's License Information for non-Ontario drivers
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </SubColumns>
-                                    </FlexToBlock>
-                                </Col3>
-                            </FlexToBlock>
-                            <Copyright>
-                                Copyright ©{new Date().getFullYear()} Drive Test Pro Driving School All
-                                Rights Reserved.
-                            </Copyright>
-                        </Section>
-                    </Container>
-                )
-            }}
-        />
+        <Container>
+            <Pad/>
+            <Section>
+                <FlexToBlock style={{alignItems: 'flex-end'}}>
+                    <Col1>
+                    </Col1>
+                    <Col2/>
+                    <Col3>
+                    </Col3>
+                </FlexToBlock>
+                <Pad/>
+                <FlexToBlock>
+                    <Col1>
+                        <h2>Navigation Links</h2>
+                        <ul>
+                            <li>
+                                <Link to="/#services">Services</Link>
+                            </li>
+                            <li>
+                                <Link to="/#testimonials">Testimonials</Link>
+                            </li>
+                            <li>
+                                <Link to="/#faq">Frequently Asked Questions</Link>
+                            </li>
+                        </ul>
+                    </Col1>
+                    <Col2/>
+                    <Col3>
+                        <h2>Contact</h2>
+                        <FlexToBlock as={'ul'}>
+                            <SubColumns as={'li'}>
+                                Greater Toronto Area
+                                <br/>
+                                <a href="tel:647-739-1046">(647) 739-1046</a>
+                            </SubColumns>
+                        </FlexToBlock>
+                        <Pad/>
+                        <FlexToBlock>
+                            <SubColumns>
+                                <h2>Helpful Links</h2>
+                                <ul>
+                                    <li>
+                                        <a
+                                            target={'_blank'}
+                                            rel={'noopener noreferrer'}
+                                            href={
+                                                'https://www.ontario.ca/document/official-mto-drivers-handbook'
+                                            }>
+                                            Driver's Handbook - Ontario
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            target={'_blank'}
+                                            rel={'noopener noreferrer'}
+                                            href={
+                                                'https://drivetest.ca/book-a-road-test/'
+                                            }>
+                                            Book a Road Test - Ontario
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            target={'_blank'}
+                                            rel={'noopener noreferrer'}
+                                            href={
+                                                'https://www.ontario.ca/page/exchange-out-province-drivers-licence'
+                                            }>
+                                            Driver's License Information for non-Ontario drivers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </SubColumns>
+                        </FlexToBlock>
+                    </Col3>
+                </FlexToBlock>
+                <Copyright>
+                    Copyright ©{new Date().getFullYear()} Drive Test Pro Driving School All
+                    Rights Reserved.
+                </Copyright>
+            </Section>
+        </Container>
     )
+
 }

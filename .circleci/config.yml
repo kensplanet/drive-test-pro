@@ -52,6 +52,4 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "main" ]; then
               aws cloudfront create-invalidation --distribution-id 'E32O39VNC830FK' --paths '/*'
-            else
-
             fi
