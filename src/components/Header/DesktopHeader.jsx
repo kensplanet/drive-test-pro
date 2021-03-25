@@ -84,18 +84,13 @@ const useStyles = makeStyles(theme => ({
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const Header = ({siteTitle}) => {
+const Header = () => {
     const classes = useStyles();
 
     const [value, setValue] = React.useState(0);
     const [open, setOpen] = React.useState(false);
     const [openSnackBar, setOpenSnackBar] = React.useState(false);
     const [message, setMessage] = React.useState(false);
-
-    const handleClick = () => {
-        setOpenSnackBar(true);
-    };
-
     const handleCloseSnackBar = (event, reason) => {
         if (reason === 'clickaway') {
             return;
