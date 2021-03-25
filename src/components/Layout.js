@@ -1,10 +1,9 @@
 import React from 'react'
 import Global from './Global'
-import Header from './Header/BaseHeader'
+import Header from './Header/DesktopHeader'
 import Footer from './Footer'
 import RecentPosts from './RecentPosts'
 import {ThemeProvider} from 'styled-components'
-import Dock from "./Dock/Dock";
 
 const Layout = ({children, homepage}) => {
     return (
@@ -30,7 +29,6 @@ const Layout = ({children, homepage}) => {
                     {children}
 
                     <RecentPosts/>
-                    <Dock/>
                     <Footer/>
                 </div>
             </ThemeProvider>

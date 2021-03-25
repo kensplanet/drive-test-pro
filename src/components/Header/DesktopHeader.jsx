@@ -21,6 +21,17 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import Snackbar from "@material-ui/core/Snackbar/Snackbar";
 import CloseIcon from '@material-ui/icons/Close';
 import axios from "axios";
+import Dock from "../Dock/Dock";
+import withDimensions from "../Dimensions";
+import clsx from "clsx";
+import MenuIcon from '@material-ui/icons/Menu'
+import Drawer from "@material-ui/core/Drawer/Drawer";
+import Divider from "@material-ui/core/Divider";
+import List from "@material-ui/core/List";
+import ListItemText from "@material-ui/core/ListItemText/ListItemText";
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import ListItem from '@material-ui/core/ListItem'
 
 const drawerWidth = 240;
 
@@ -84,7 +95,7 @@ const useStyles = makeStyles(theme => ({
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const Header = () => {
+const Header = ({isMobile}) => {
     const classes = useStyles();
 
     const [value, setValue] = React.useState(0);
@@ -98,10 +109,20 @@ const Header = () => {
 
         setOpenSnackBar(false);
     };
+    const theme = useTheme();
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+    function handleDrawerOpen() {
+        setDrawerOpen(true)
+    }
+
+    function handleDrawerClose() {
+        setDrawerOpen(false)
+    }
 
     const handleSubmit = (values) => {
-        let val = { ...values };
-        val.message = val.message.replace(/(\r\n|\n|\r)/gm," ");
+        let val = {...values};
+        val.message = val.message.replace(/(\r\n|\n|\r)/gm, " ");
         axios.post('https://vookfl8vg0.execute-api.ca-central-1.amazonaws.com/prod', val).then(function () {
             setOpen(false);
             setMessage('Message received');
@@ -118,6 +139,10 @@ const Header = () => {
             setOpen(true);
         }
         setValue(newValue);
+    };
+
+    const openModal = () => {
+        setOpen(true);
     };
 
     const StyledTab = withStyles((theme) => ({
@@ -145,33 +170,9 @@ const Header = () => {
         },
     })((props) => <Tabs {...props} TabIndicatorProps={{children: <span/>}}/>);
 
-    return (
-        <div className={classes.root}>
+    const getDesktopHeader = () => {
+        return <div className={classes.root}>
             <CssBaseline/>
-            <Dialog
-                open={open}
-                TransitionComponent={Transition}
-                keepMounted
-                onClose={() => {setOpen(false);}}
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
-            >
-                <DialogTitle disableTypography id="alert-dialog-slide-title" style={{display: 'flex',
-                    justifyContent: 'space-between',
-                    'alignItems': 'center'}}>
-                    <SectionText
-                        anchor
-                        id={'contactus'} style={{align: 'center', padding: '0px'}}
-                        heading={'Contact Us'}
-                        className={'smaller'}>
-                    </SectionText>
-                    <CancelIcon fontSize={"large"} style={{cursor: 'pointer'}} onClick={() => {setOpen(false);}}/>
-
-                </DialogTitle>
-                <DialogContent>
-                    <ContactUs handleSubmit={handleSubmit}/>
-                </DialogContent>
-            </Dialog>
             <AppBar
                 position="fixed"
                 elevation={0}
@@ -210,12 +211,117 @@ const Header = () => {
                 action={
                     <React.Fragment>
                         <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackBar}>
-                            <CloseIcon fontSize="small" />
+                            <CloseIcon fontSize="small"/>
                         </IconButton>
                     </React.Fragment>
                 }
             />
+            <Dock openModal={openModal}/>
         </div>
+    };
+
+    const getMobileHeader = () => {
+        return (
+            <div className={classes.root}>
+                <CssBaseline/>
+                <AppBar
+                    position="fixed"
+                    elevation={0}
+                    className={clsx(classes.appBar, {
+                        [classes.appBarShift]: drawerOpen,
+                    })}
+                >
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="Open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            className={clsx(classes.menuButton, drawerOpen && classes.hide)}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Link to={"/"}>
+                            <img width={"96px"} src={"/icon.png"}/>
+                        </Link>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    className={classes.drawer}
+                    variant="persistent"
+                    anchor="left"
+                    open={drawerOpen}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
+                >
+                    <div className={classes.drawerHeader}>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'ltr' ? (
+                                <ChevronLeftIcon/>
+                            ) : (
+                                <ChevronRightIcon/>
+                            )}
+                        </IconButton>
+                    </div>
+                    <Divider/>
+                    <List>
+                        <Link to="/#services" onClick={handleDrawerClose}>
+                            <ListItem button>
+                                <ListItemText>Services</ListItemText>
+                            </ListItem>
+                        </Link>
+                        <Link to="/#testimonials" onClick={handleDrawerClose}>
+                            <ListItem button>
+                                <ListItemText>Testimonials</ListItemText>
+                            </ListItem>
+                        </Link>
+                        <Link to="/#faq" onClick={handleDrawerClose}>
+                            <ListItem button>
+                                <ListItemText>FAQs</ListItemText>
+                            </ListItem>
+                        </Link>
+                    </List>
+                </Drawer>
+                <Dock openModal={openModal}/>
+            </div>
+        );
+    };
+
+    return (
+        <>
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={() => {
+                    setOpen(false);
+                }}
+                aria-labelledby="alert-dialog-slide-title"
+                aria-describedby="alert-dialog-slide-description"
+            >
+                <DialogTitle disableTypography id="alert-dialog-slide-title" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    'alignItems': 'center'
+                }}>
+                    <SectionText
+                        anchor
+                        id={'contactus'} style={{align: 'center', padding: '0px'}}
+                        heading={'Contact Us'}
+                        className={'smaller'}>
+                    </SectionText>
+                    <CancelIcon fontSize={"large"} style={{cursor: 'pointer'}} onClick={() => {
+                        setOpen(false);
+                    }}/>
+
+                </DialogTitle>
+                <DialogContent>
+                    <ContactUs handleSubmit={handleSubmit}/>
+                </DialogContent>
+            </Dialog>
+            {isMobile() ? getMobileHeader() : getDesktopHeader()}
+        </>
     )
 };
 
@@ -227,4 +333,4 @@ Header.defaultProps = {
     siteTitle: ``,
 };
 
-export default Header
+export default withDimensions(Header)
