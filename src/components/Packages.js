@@ -44,12 +44,17 @@ const CustomizedTables = ({isMobile}) => {
     const classes = useStyles();
 
     const rows = [
-        createData('Cost', '$300', '$450', '$450'),
-        createData('In class sessions', !isMobile() ? '20 hours': '20h', !isMobile() ? '10 hours': '10h', <ClearIcon/>),
-        createData('In car lessons', <ClearIcon/>, !isMobile() ? '10 hours' : '10h', !isMobile() ? '15 hours': '15h'),
-        createData('Pick & Drop Services', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
-        createData('Instructor car for road test', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>),
-        createData('Test Bookings', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Cost', <><div>$449</div><div style={{fontSize: '15' +
+                'px'}}>(+HST)</div></>, <><div>$569</div><div style={{fontSize: '15' +
+                'px'}}>(+HST)</div></>, <><div>$769</div><div style={{fontSize: '15' +
+                'px'}}>(+HST)</div></>),
+        createData('In Class Sessions', !isMobile() ? '20 hours': '20h', !isMobile() ? '20 hours': '20h', !isMobile() ? '20 hours': '20h'),
+        createData('In Home Activity', !isMobile() ? '10 hours': '10h', !isMobile() ? '10 hours': '10h', !isMobile() ? '10 hours': '10h'),
+        createData('In Car Lessons', !isMobile() ? '10 hours' : '10h', !isMobile() ? '10 hours' : '10h', !isMobile() ? '15 hours': '15h'),
+        createData('Pick & Drop Services', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Early Road Test Booking', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Eligible Insurance Discount', <DoneIcon/>, <DoneIcon/>, <DoneIcon/>),
+        createData('Instructor car for road test', <ClearIcon/>, <DoneIcon/>, <DoneIcon/>)
     ];
 
     return (
@@ -58,9 +63,9 @@ const CustomizedTables = ({isMobile}) => {
                 <TableHead>
                     <TableRow>
                         <StyledTableCell><Typography variant={isMobile() ? "h6": "h5"}>Packages</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G1</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G2</Typography></StyledTableCell>
-                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>G</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>Silver</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>Gold</Typography></StyledTableCell>
+                        <StyledTableCell align="right"><Typography variant={isMobile() ? "h6": "h5"}>{!isMobile() ? 'Platinum' : <><div>Plati</div>num</>}</Typography></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
