@@ -108,14 +108,6 @@ const Container = styled.div`
   }
 `
 
-const rates = {
-  main: [
-    { elem: '2 Hour Driving Lessons', price: '$100' },
-    { elem: '6 Hour Driving Lessons', price: '$250' },
-    { elem: 'Any additional hour after 6', price: '$40/hour' }
-  ]
-};
-
 export default ({ type = 'main' }) => {
   return (
     <SectionText anchor id={'services'}
@@ -124,12 +116,9 @@ export default ({ type = 'main' }) => {
         <Container>
           <Packages/>
           <Col>
-            <h2>Driving Lesson Rates</h2>
+            <h2>Private Lesson Rates</h2>
             <Typography variant="body1" gutterBottom>
-              We provide blended rates depending on the number of hours you wish to practice with us. The more the no. of hours, the lesser the rates.
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              Please move the slider to get your custom rate.
+              Select your license class and move the slider to get your rate
             </Typography>
             <Rate/>
           </Col>
@@ -139,12 +128,8 @@ export default ({ type = 'main' }) => {
             <table className="hours">
               <tbody>
                 <tr>
-                  <td>Monday-Thursday</td>
-                  <td>7am–8pm</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>7am–5pm</td>
+                  <td>Sunday - Saturday</td>
+                  <td>8am – 8pm</td>
                 </tr>
               </tbody>
             </table>
@@ -154,18 +139,10 @@ export default ({ type = 'main' }) => {
             </h5>
             <table className="hours">
               <tbody>
-                <tr>
-                  <td>Monday-Thursday</td>
-                  <td>9:30am–4:30pm</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>9:30am–4:00pm</td>
-                </tr>
-                <tr>
-                  <td>Saturday, Sunday</td>
-                  <td>Closed</td>
-                </tr>
+              <tr>
+                <td>Sunday - Saturday</td>
+                <td>8am – 8pm</td>
+              </tr>
               </tbody>
             </table>
           </Col2>

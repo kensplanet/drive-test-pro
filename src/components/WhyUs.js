@@ -6,7 +6,7 @@ export default () => {
   return (
     <SectionText
       anchor
-      heading={'Why Us?'}
+      heading={'Why Choose Us?'}
       className={'smaller'}>
         <CustomizedTimeline/>
     </SectionText>
