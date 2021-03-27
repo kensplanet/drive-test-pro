@@ -7,6 +7,7 @@ import withDimensions from '../components/Dimensions';
 import Logo from "../components/Logo";
 import Testimonials from "../components/Testimonials";
 import Services from "../components/Services";
+import Grid from "@material-ui/core/Grid";
 
 const Home = ({isMobile}) => {
     return (
@@ -15,9 +16,9 @@ const Home = ({isMobile}) => {
                 <Logo/>
             </div>}
             <Services/>
-            <Testimonials/>
-            <WhyUs/>
-            <Faq/>
+            <Grid container><Testimonials/></Grid>
+            <Grid container><WhyUs/></Grid>
+            <Grid container><Faq/></Grid>
         </Layout>
     )
 };

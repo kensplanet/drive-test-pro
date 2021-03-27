@@ -10,6 +10,7 @@ export const Section = styled.section`
 `
 
 const SectionWithText = styled.section`
+  width: 100%;
   max-width: 1200px;
   padding: ${props =>
     props.anchor
